@@ -1,0 +1,63 @@
+<!--
+  Generated template for the IniciativaInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="amarillo">
+    <ion-title>iniciativa-Info</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <h3>Descripcion</h3>
+  <ion-label>En este punto se escribira una breve descripcion.</ion-label>
+  <div #map id="map" name="map"></div>
+  <ion-row>
+      <ion-col col-6 style="padding: 5px;">
+        <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>{{likes}} likes</div>
+        </button>
+      </ion-col>
+      <ion-col col-6 style="padding: 5px;">
+        <button ion-button icon-left clear small>
+              <ion-icon name="text"></ion-icon>
+              <div>{{comentariosTotal}} comentarios</div>
+            </button>
+      </ion-col>
+    </ion-row>
+  <ion-scroll scrollY="true" class="lista">
+    <ion-list>
+      <ion-item *ngFor="let c of comentarios">
+        <ion-avatar item-start>
+          <img src="{{c.avatar}}">
+        </ion-avatar>
+        <h2>{{c.usuario}}</h2>
+        <p>{{c.comentario}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-scroll>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <input type="file" *ngIf="!dispositivo">
+    <ion-row class="descripcion">
+      <ion-col col-9>
+        <ion-textarea type="text" placeholder="Escribir comentario" [(ngModel)]="comentario"></ion-textarea>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button class="botones" clear (click)="abrirArchivos()" *ngIf="dispositivo">
+                <ion-icon name="attach"></ion-icon>
+            </button>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button class="botones" (click)="comentarIniciativa()">
+                <ion-icon name="send"></ion-icon>
+            </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

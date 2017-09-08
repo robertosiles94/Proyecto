@@ -1,14 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <div>
+    <ion-label>
+      <h1>Iniciar Sesion</h1>
+    </ion-label>
+    <button ion-button (click)="mostrarIniciativas()">
+      Facebook
+    </button>
+    <button ion-button color="danger" (click)="mostrarIniciativas()">
+       Google +
+    </button>
+  </div>
 </ion-content>
