@@ -22,17 +22,17 @@ export class IniciativasPage {
 
   ionViewDidLoad() {
     this.iniciativas = [
-      { autor:"Usuario 1", titulo:"Titulo 1", imagen:"img/imagen.jpg", likes:"3", comentarios:"4" },
-      { autor:"Usuario 2", titulo:"Titulo 2", imagen:"img/imagen.jpg", likes:"5", comentarios:"7" },
-      { autor:"Usuario 3", titulo:"Titulo 3", imagen:"img/imagen.jpg", likes:"7", comentarios:"9" },
-      { autor:"Usuario 4", titulo:"Titulo 4", imagen:"img/imagen.jpg", likes:"1", comentarios:"8" },
-      { autor:"Usuario 5", titulo:"Titulo 5", imagen:"img/imagen.jpg", likes:"6", comentarios:"2" },
-      { autor:"Usuario 6", titulo:"Titulo 6", imagen:"img/imagen.jpg", likes:"2", comentarios:"3" },
-      { autor:"Usuario 7", titulo:"Titulo 7", imagen:"img/imagen.jpg", likes:"5", comentarios:"4" },
-      { autor:"Usuario 8", titulo:"Titulo 8", imagen:"img/imagen.jpg", likes:"5", comentarios:"5" },
-      { autor:"Usuario 9", titulo:"Titulo 9", imagen:"img/imagen.jpg", likes:"6", comentarios:"7" },
-      { autor:"Usuario 10", titulo:"Titulo 10", imagen:"img/imagen.jpg", likes:"3", comentarios:"9" },
-      { autor:"Usuario 11", titulo:"Titulo 11", imagen:"img/imagen.jpg", likes:"1", comentarios:"13" },
+      { autor:"Usuario 1", titulo:"Titulo 1", imagen:"img/imagen.jpg", likes:"3", comentarios:"4", descripcion: "descripcion" },
+      { autor:"Usuario 2", titulo:"Titulo 2", imagen:"img/imagen.jpg", likes:"5", comentarios:"7", descripcion: "descripcion" },
+      { autor:"Usuario 3", titulo:"Titulo 3", imagen:"img/imagen.jpg", likes:"7", comentarios:"9", descripcion: "descripcion" },
+      { autor:"Usuario 4", titulo:"Titulo 4", imagen:"img/imagen.jpg", likes:"1", comentarios:"8", descripcion: "descripcion" },
+      { autor:"Usuario 5", titulo:"Titulo 5", imagen:"img/imagen.jpg", likes:"6", comentarios:"2", descripcion: "descripcion" },
+      { autor:"Usuario 6", titulo:"Titulo 6", imagen:"img/imagen.jpg", likes:"2", comentarios:"3", descripcion: "descripcion" },
+      { autor:"Usuario 7", titulo:"Titulo 7", imagen:"img/imagen.jpg", likes:"5", comentarios:"4", descripcion: "descripcion" },
+      { autor:"Usuario 8", titulo:"Titulo 8", imagen:"img/imagen.jpg", likes:"5", comentarios:"5", descripcion: "descripcion" },
+      { autor:"Usuario 9", titulo:"Titulo 9", imagen:"img/imagen.jpg", likes:"6", comentarios:"7", descripcion: "descripcion" },
+      { autor:"Usuario 10", titulo:"Titulo 10", imagen:"img/imagen.jpg", likes:"3", comentarios:"9", descripcion: "descripcion" },
+      { autor:"Usuario 11", titulo:"Titulo 11", imagen:"img/imagen.jpg", likes:"1", comentarios:"13", descripcion: "descripcion" }
     ];
   }
 
