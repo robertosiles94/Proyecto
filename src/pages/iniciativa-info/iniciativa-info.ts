@@ -26,20 +26,23 @@ export class IniciativaInfoPage {
   likes:string = "3";
   comentariosTotal:string = "7";
   dispositivo: boolean;
+  titulo: string;
+  descripcion: string;
+  idInicitiva: any;
+  imagen: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private fileChooser: FileChooser, private services: ServicesProvider) {
     this.dispositivo = this.services.getPlataforma() == "web"? false: true;
+    this.titulo = this.navParams.get("titulo");
+    this.descripcion = this.navParams.get("descripcion");
+    this.idInicitiva = this.navParams.get("idIniciativa");
+    this.imagen = this.navParams.get("imagen");
+    this.comentarios = this.navParams.get("Comentarios");
+    this.comentariosTotal = this.comentarios.length;
   }
 
   ionViewDidLoad() {
     this.initMap();
-    this.comentarios = [
-      { usuario: "Usuario 1", avatar: "img/avatar.jpg", comentario:"Comentario 1" },
-      { usuario: "Usuario 2", avatar: "img/avatar.jpg", comentario:"Comentario 2" },
-      { usuario: "Usuario 3", avatar: "img/avatar.jpg", comentario:"Comentario 3" },
-      { usuario: "Usuario 4", avatar: "img/avatar.jpg", comentario:"Comentario 4" },
-      { usuario: "Usuario 5", avatar: "img/avatar.jpg", comentario:"Comentario 5" }
-    ];
   }
 
   initMap() {
@@ -67,5 +70,9 @@ export class IniciativaInfoPage {
     if(this.comentario != "")
       this.comentarios.push({ usuario: "Usuario 1", avatar: "img/avatar.jpg", comentario: this.comentario });
     this.comentario = "";
+  }
+
+  subirComentario() {
+    this.services.subirComentario({idIniciativa: this.idInicitiva, comentario: this.comentario});
   }
 }

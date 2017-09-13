@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
 import { ServicesProvider } from '../providers/services/services';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ServicesProvider } from '../providers/services/services';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

@@ -2,6 +2,17 @@
 
   <ion-navbar color="amarillo">
     <ion-title>Iniciativas</ion-title>
+    <ion-buttons end *ngIf="false">
+      <button ion-button icon-only icon-left color="dark" (click)="iniciarSesion()">
+      <ion-icon name="contact"></ion-icon>
+      Iniciar Sesion
+    </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refrescarInicitavivas()">
+          <ion-icon name="refresh"></ion-icon>
+      </button>
+  </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -12,11 +23,11 @@
   </ion-searchbar>
   <ion-row>
     <ion-col col-sm-6 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of iniciativas">
-      <ion-card (click)="mostrarIniciativa()">
+      <ion-card (click)="mostrarIniciativa(i)">
         <ion-label class="titulo">
           <h2>{{i.titulo}}</h2>
         </ion-label>
-        <img src="{{i.imagen}}">
+        <img src="http://bigwasi.org/Bigwasi/images/Iniciativas/{{i.imagen}}">
         <ion-card-content style="padding: 5px;">
           <p textwrap>{{i.descripcion}}</p>
         </ion-card-content>
@@ -24,13 +35,13 @@
           <ion-col col-6 style="padding: 5px;">
             <button ion-button icon-left clear small>
                   <ion-icon name="thumbs-up"></ion-icon>
-                  <div>{{i.likes}}</div>
+                  <div>{{i.Comentarios.$size}}</div>
             </button>
           </ion-col>
           <ion-col col-6 style="padding: 5px;">
             <button ion-button icon-left clear small>
                   <ion-icon name="text"></ion-icon>
-                  <div>{{i.comentarios}}</div>
+                  <div>{{i.likes}}</div>
                 </button>
           </ion-col>
         </ion-row>
