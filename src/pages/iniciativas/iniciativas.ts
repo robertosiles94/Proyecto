@@ -24,8 +24,12 @@ export class IniciativasPage {
 
   ionViewDidLoad() {
     setTimeout(() => {
-      this.iniciativas = this.services.obtenerIniciativas().Iniciativas;
+      this.cargarIniciativas();
     },3000);
+  }
+
+  cargarIniciativas() {
+    this.iniciativas = this.services.obtenerIniciativas().Iniciativas;
   }
 
   mostrarIniciativa(iniciativa) {
@@ -37,7 +41,7 @@ export class IniciativasPage {
   }
 
   getItems(ev: any) {
-    this.ionViewDidLoad();
+    this.cargarIniciativas();
     let val = ev.target.value;
 
     if (val && val.trim() != '') {
