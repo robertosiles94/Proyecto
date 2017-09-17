@@ -58,4 +58,8 @@ export class IniciativasPage {
       this.iniciativas = this.services.obtenerIniciativas().Iniciativas;
     }, 3000);
   }
+
+  darLike(iniciativa) {
+    this.services.subirLike(iniciativa.idIniciativa);
+  }
 }

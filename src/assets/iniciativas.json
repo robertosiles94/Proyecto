@@ -1,0 +1,282 @@
+{
+    "Iniciativas": [
+        {
+            "idIniciativa": "1",
+            "titulo": "MI LUGAR FAVORITO",
+            "descripcion": "Comparte tu lugar favorito en la ciudad. Dale al bot\u00f3n moradito",
+            "imagen": "1.jpg",
+            "NroComentarios": "3",
+            "likes": "0",
+            "Comentarios": [
+                {
+                    "idComentario": "8",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:24:45",
+                    "archivo": "8",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "6",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-11 00:17:00",
+                    "archivo": "6",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "5",
+                    "descripcion": "hshshs",
+                    "fecha": "2017-09-11 00:07:25",
+                    "archivo": "5",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": "1.0000000000",
+                    "lng": "1.0000000000"
+                },
+                {
+                    "lat": "1.0000000000",
+                    "lng": "1.0000000000"
+                }
+            ],
+            "area": "0"
+        },
+        {
+            "idIniciativa": "13",
+            "titulo": "Programacion",
+            "descripcion": "as",
+            "imagen": "13.jpg",
+            "NroComentarios": "10",
+            "likes": "0",
+            "Comentarios": [
+                {
+                    "idComentario": "18",
+                    "descripcion": "un saludo a todos",
+                    "fecha": "2017-09-14 12:31:42",
+                    "archivo": "18",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "17",
+                    "descripcion": "un saludo a todos",
+                    "fecha": "2017-09-14 12:31:41",
+                    "archivo": "17",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "15",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:30:40",
+                    "archivo": "15",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "16",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:30:40",
+                    "archivo": "16",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "13",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:30:04",
+                    "archivo": "13",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "14",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:30:04",
+                    "archivo": "14",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "12",
+                    "descripcion": "hola como estas",
+                    "fecha": "2017-09-14 12:28:36",
+                    "archivo": "12",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "11",
+                    "descripcion": "hola como estas",
+                    "fecha": "2017-09-14 12:28:36",
+                    "archivo": "11",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "9",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:28:07",
+                    "archivo": "9",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "10",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:28:07",
+                    "archivo": "10",
+                    "area": "0",
+                    "estado": "En espera",
+                    "Puntos": []
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": "-17.2208230660",
+                    "lng": "-66.1791086197"
+                },
+                {
+                    "lat": "-17.3952002580",
+                    "lng": "-66.2505197525"
+                },
+                {
+                    "lat": "-17.4109253905",
+                    "lng": "-66.0156869888"
+                },
+                {
+                    "lat": "-17.2149201979",
+                    "lng": "-66.0287332535"
+                }
+            ],
+            "area": "0"
+        },
+        {
+            "idIniciativa": "7",
+            "titulo": "Prueba Todo",
+            "descripcion": "Prueba de inserci\u00f3n total",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "0",
+            "Comentarios": [],
+            "puntos": [
+                {
+                    "lat": "-17.3545707428",
+                    "lng": "-66.2420654297"
+                },
+                {
+                    "lat": "-17.4947698823",
+                    "lng": "-66.2681579590"
+                },
+                {
+                    "lat": "-17.4043734163",
+                    "lng": "-66.0800170898"
+                },
+                {
+                    "lat": "-17.3493275684",
+                    "lng": "-66.1205291748"
+                },
+                {
+                    "lat": "-17.3467059249",
+                    "lng": "-66.1816406250"
+                }
+            ],
+            "area": "1"
+        },
+        {
+            "idIniciativa": "8",
+            "titulo": "Iniciativa",
+            "descripcion": "Iniciativa",
+            "imagen": "8.png",
+            "NroComentarios": "0",
+            "likes": "0",
+            "Comentarios": [],
+            "puntos": [],
+            "area": "0"
+        },
+        {
+            "idIniciativa": "9",
+            "titulo": "Iniciativa",
+            "descripcion": "Ini",
+            "imagen": "9.png",
+            "NroComentarios": "0",
+            "likes": "0",
+            "Comentarios": [],
+            "puntos": [],
+            "area": "1"
+        },
+        {
+            "idIniciativa": "10",
+            "titulo": "Iniciativa",
+            "descripcion": "i",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "0",
+            "Comentarios": [],
+            "puntos": [],
+            "area": "0"
+        },
+        {
+            "idIniciativa": "14",
+            "titulo": "Iniciativa Markers",
+            "descripcion": "YYYYYYYYY",
+            "imagen": "14.png",
+            "NroComentarios": "0",
+            "likes": "0",
+            "Comentarios": [],
+            "puntos": [
+                {
+                    "lat": "-17.3165543334",
+                    "lng": "-66.1797952652"
+                },
+                {
+                    "lat": "-17.6139196731",
+                    "lng": "-66.2333536148"
+                },
+                {
+                    "lat": "-17.4882209213",
+                    "lng": "-65.8666849136"
+                }
+            ],
+            "area": "0"
+        },
+        {
+            "idIniciativa": "11",
+            "titulo": "Iniciativa Markers",
+            "descripcion": "UUU",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "0",
+            "Comentarios": [],
+            "puntos": [],
+            "area": "0"
+        },
+        {
+            "idIniciativa": "12",
+            "titulo": "uuuuuuuuu",
+            "descripcion": "8",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "0",
+            "Comentarios": [],
+            "puntos": [],
+            "area": "0"
+        }
+    ]
+}

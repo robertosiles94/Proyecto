@@ -16,6 +16,7 @@ export class ServicesProvider {
   plataforma: string;
   iniciativas: any;
   data: any;
+  URLGlobal: any = 'http://bigwasi.org/Bigwasi/';
 
   constructor(public plt: Platform, public http: Http) {
     this.getIniciativas().then((data) => {
@@ -36,7 +37,7 @@ export class ServicesProvider {
 
   getIniciativas() {
     return new Promise((resolve, reject) => {
-      this.http.get('http://bigwasi.org/Iniciativa/GetIniciativas').subscribe(data => {
+      this.http.get(this.URLGlobal + 'Iniciativa/GetIniciativas').subscribe(data => {
         this.iniciativas = data.json();
       });
     })
@@ -47,16 +48,27 @@ export class ServicesProvider {
   }
 
   subirComentario(objetoComentario) {
-    var link = 'http://bigwasi.org/Comentario/Registar';
+    console.log(objetoComentario);
+    var link = this.URLGlobal + 'Comentario/Registar';
     let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let body = {idIniciativa: objetoComentario.idIniciativa, comentario: objetoComentario.comentario }
-    var data = JSON.stringify(body);
-    this.http.post(link, body, { headers: headers}).map(res => res.json())
+    headers.append('Content-Type', 'text/plain');
+    this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&comentario=" + objetoComentario.comentario + "&Puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
     .subscribe(data => {
         console.log(data);
     }, error => {
-        console.log("Oooops!");
+        console.log("error");
+    });
+  }
+
+  subirLike(idIniciativa) {
+    let headers = new Headers();
+    let body = {idIniciativa: idIniciativa};
+    headers.append('Content-Type', 'text/plain');
+    this.http.post(this.URLGlobal + 'Iniciativa/Like' + "?idIniciativa="+idIniciativa, body, { headers: headers}).map(res => res.json())
+    .subscribe(data => {
+        console.log(data);
+    }, error => {
+        console.log("error");
     });
   }
 }

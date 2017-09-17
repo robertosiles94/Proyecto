@@ -8,6 +8,12 @@ page-iniciativas {
     }
 
     .titulo {
-        margin-left: 5px;
+        font-weight: bold;
+    }
+
+    .card {
+        img {
+            height: 200px;
+        }
     }
 }
