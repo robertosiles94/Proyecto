@@ -48,11 +48,11 @@ export class ServicesProvider {
   }
 
   subirComentario(objetoComentario) {
-    console.log(objetoComentario);
+    console.log(objetoComentario.puntos);
     var link = this.URLGlobal + 'Comentario/Registar';
     let headers = new Headers();
     headers.append('Content-Type', 'text/plain');
-    this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&comentario=" + objetoComentario.comentario + "&Puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
+    this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&comentario=" + objetoComentario.comentario + "&puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
     .subscribe(data => {
         console.log(data);
     }, error => {
