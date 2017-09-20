@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServicesProvider } from '../../providers/services/services';
 import { LoadingController } from 'ionic-angular';
@@ -17,22 +19,49 @@ import { LoadingController } from 'ionic-angular';
 export class IniciativasPage {
 
   iniciativas: any;
+  listaVisible: any;
+  categorias: any;
+  categoriaSelecionada:string = "Todos";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public services: ServicesProvider, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public services: ServicesProvider, public loadingCtrl: LoadingController) {
     
   }
 
+  getIniciativas() {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.services.obtenerURLGlobal() + 'Iniciativa/GetIniciativas').subscribe(data => {
+        this.iniciativas = data.json().Iniciativas;
+        this.listaVisible = this.iniciativas;
+      });
+    })
+  }
+
+  getCategorias() {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.services.obtenerURLGlobal()  + 'Categoria/WSListaCategorias').subscribe(data => {
+        this.categorias = data.json().Categorias;
+      });
+    })
+  }
+
   ionViewDidLoad() {
-    setTimeout(() => {
-      this.cargarIniciativas();
-    },3000);
+    this.getIniciativas();
+    this.obtenerCategorias();
+  }
+
+  obtenerCategorias() {
+    this.getCategorias().then((data) => {
+      this.categorias = data;
+    });
   }
 
   cargarIniciativas() {
-    this.iniciativas = this.services.obtenerIniciativas().Iniciativas;
+    this.getIniciativas();
+    this.cargarCategoria(this.categoriaSelecionada);
   }
 
   mostrarIniciativa(iniciativa) {
+    document.cookie = iniciativa.idIniciativa;
     this.navCtrl.push('IniciativaInfoPage', iniciativa);
   }
 
@@ -61,6 +90,27 @@ export class IniciativasPage {
       loader.dismiss();
       this.iniciativas = this.services.obtenerIniciativas().Iniciativas;
     }, 3000);
+  }
+
+  paginaInformacion() {
+    this.navCtrl.push('AcercaDePage');
+  }
+
+  onSelectChange(event: string) {
+    if (this.categoriaSelecionada == "Todos") {
+      this.cargarIniciativas();
+    } else {
+      this.cargarCategoria(event);
+    }
+  }
+
+  cargarCategoria(categoria) {
+    this.listaVisible = [];
+    for (let i = 0; i < this.iniciativas.length; i++) {
+      if (this.iniciativas[i].Categoria == categoria) {
+        this.listaVisible.push(this.iniciativas[i]);
+      }
+    }
   }
 
   darLike(iniciativa) {

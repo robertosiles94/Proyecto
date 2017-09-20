@@ -25,6 +25,10 @@ export class ServicesProvider {
     this.data = {};
   }
 
+  obtenerURLGlobal() {
+    return this.URLGlobal;
+  }
+
   getPlataforma() {
     var result = "";
     if(this.plt.is('ios') || this.plt.is('android')) {

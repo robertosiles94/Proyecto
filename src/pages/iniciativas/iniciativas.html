@@ -9,20 +9,37 @@
     </button>
     </ion-buttons>
     <ion-buttons end>
+        <button ion-button icon-only (click)="paginaInformacion()">
+            <ion-icon name="information-circle"></ion-icon>
+            Acerca De
+        </button>
+      </ion-buttons>
+    <ion-buttons end>
       <button ion-button icon-only (click)="refrescarInicitavivas()">
           <ion-icon name="refresh"></ion-icon>
+          Actualizar
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar...">
-  </ion-searchbar>
   <ion-row>
-    <ion-col col-sm-6 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of iniciativas">
+    <ion-col col-8>
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar Iniciativa...">
+      </ion-searchbar>
+    </ion-col>
+    <ion-col col-4>
+      <ion-select [(ngModel)]="categoriaSelecionada" (ionChange)="onSelectChange($event)" class="seleccion">
+        <ion-option value="Todos">Todos</ion-option>
+        <ion-option value="{{c}}" *ngFor="let c of categorias">{{c}}</ion-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-label class="categoriaTitulo"><b>Categoria Seleccionada: </b>{{categoriaSelecionada}}</ion-label>
+  <ion-row>
+    <ion-col col-sm-6 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of listaVisible">
       <ion-card (click)="mostrarIniciativa(i)" class="card">
         <img src="http://bigwasi.org/Bigwasi/images/Iniciativas/{{i.imagen}}" class="imagen">
         <ion-card-header class="titulo">
