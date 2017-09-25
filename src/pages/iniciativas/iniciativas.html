@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="amarillo">
+  <ion-navbar color="verde">
     <ion-title>Iniciativas</ion-title>
     <ion-buttons end *ngIf="false">
       <button ion-button icon-only icon-left color="dark" (click)="iniciarSesion()">
@@ -9,29 +9,34 @@
     </button>
     </ion-buttons>
     <ion-buttons end>
-        <button ion-button icon-only (click)="paginaInformacion()">
+      <button ion-button icon-only (click)="paginaInformacion()">
             <ion-icon name="information-circle"></ion-icon>
-            Acerca De
         </button>
-      </ion-buttons>
+    </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only (click)="refrescarInicitavivas()">
           <ion-icon name="refresh"></ion-icon>
-          Actualizar
       </button>
     </ion-buttons>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="iniciarSesion()">
+            <ion-icon name="contact"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content class="fondo">
   <ion-row>
     <ion-col col-8>
-      <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar Iniciativa...">
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar Iniciativa..." class="buscador">
       </ion-searchbar>
     </ion-col>
     <ion-col col-4>
+      <ion-label class="titutloCategoria"><b>Categoria:</b></ion-label>
       <ion-select [(ngModel)]="categoriaSelecionada" (ionChange)="onSelectChange($event)" class="seleccion">
+        <ion-label>Categoria</ion-label>
         <ion-option value="Todos">Todos</ion-option>
         <ion-option value="{{c}}" *ngFor="let c of categorias">{{c}}</ion-option>
       </ion-select>
@@ -39,11 +44,24 @@
   </ion-row>
   <ion-label class="categoriaTitulo"><b>Categoria Seleccionada: </b>{{categoriaSelecionada}}</ion-label>
   <ion-row>
-    <ion-col col-sm-6 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of listaVisible">
+    <ion-col col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 *ngIf="esUsuario">
+      <ion-card (click)="mostrarIniciativaUsuario()" class="card">
+        <img src="img/IniciativaPerfil.png" class="imagen">
+        <ion-card-header class="titulo" color="cafe">
+          Mi Historial
+        </ion-card-header>
+        <ion-card-content>
+          <p textwrap>Iniciativas en las cuales se hizo reportes.</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of listaVisible">
       <ion-card (click)="mostrarIniciativa(i)" class="card">
         <img src="http://bigwasi.org/Bigwasi/images/Iniciativas/{{i.imagen}}" class="imagen">
-        <ion-card-header class="titulo">
+        <ion-card-header color="cafe">
+          <b>
           {{i.titulo}}
+          </b>
         </ion-card-header>
         <ion-card-content>
           <p textwrap>{{i.descripcion}}</p>

@@ -5,7 +5,7 @@ import { ServicesProvider } from '../../providers/services/services';
 import { LatLng } from '@ionic-native/google-maps';
 import { AlertController } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
-
+import { ToastController } from 'ionic-angular';
 /**
  * Generated class for the IniciativaInfoPage page.
  *
@@ -42,15 +42,34 @@ export class IniciativaInfoPage {
   marcadoresUsuario: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
-    private fileChooser: FileChooser, private services: ServicesProvider, public alertCtrl: AlertController) {
+    private fileChooser: FileChooser, private services: ServicesProvider, public alertCtrl: AlertController, public toastCtrl: ToastController) {
     this.dispositivo = this.services.getPlataforma() == "web" ? false : true;
-      
   }
 
   ionViewDidLoad() {
-    var urlIniciativa = this.services.obtenerURLGlobal() + 'Iniciativa/GetIniciativa/' + (document.cookie.split(";")[1]).trim();
-    this.getIniciativa(urlIniciativa);
     this.initMap();
+    if(this.navParams.data.valor === 1) {
+      this.cargarIniciativaUsuario();
+    } else {
+      var index = this.services.getCookie("iniciativa");
+      var urlIniciativa = this.services.obtenerURLGlobal() + 'Iniciativa/GetIniciativa/' + index;
+      this.getIniciativa(urlIniciativa);
+    }
+  }
+
+  cargarIniciativaUsuario() {
+    this.titulo = this.navParams.data.iniciativa.titulo;
+    this.descripcion = this.navParams.data.iniciativa.descripcion;
+    this.idInicitiva = this.navParams.data.iniciativa.idIniciativa;
+    this.imagen = this.navParams.data.iniciativa.imagen;
+    this.comentarios = this.navParams.data.iniciativa.Comentarios;
+    this.fecha = this.navParams.data.iniciativa.fecha;
+    this.area = this.navParams.data.iniciativa.area;
+    this.comentariosTotal = this.comentarios.length;
+    this.likes = this.navParams.data.iniciativa.likes;
+    this.puntos = this.navParams.data.iniciativa.puntos;
+    this.cargarIniciativasDeComentariosMapa();
+    this.marcadoresUsuario = [];
   }
 
   cargarIniciativa() {
@@ -138,11 +157,20 @@ export class IniciativaInfoPage {
     this.contadorMarcadores--;
   }
 
+  removerTodosLosMarcadores() {
+    for (let i = 0; i < this.marcadoresUsuario.length; i++) {
+      this.marcadoresUsuario[i].setMap(null);
+    }
+    this.marcadoresLimite = 20;
+  }
+
   subirComentario() {
     if (this.comentario != "") {
       var puntos = this.concatenarMarcadores();
       this.services.subirComentario({ idIniciativa: this.idInicitiva, comentario: this.comentario, puntos: puntos });
-      this.marcadoresUsuario = [];
+      this.removerTodosLosMarcadores();
+      this.marcadoresUsuario = [];    
+      this.mensajeEnviado(); 
     }
     this.comentario = "";
   }
@@ -207,5 +235,14 @@ export class IniciativaInfoPage {
       fillOpacity: 0.35
     });
     covertura.setMap(this.map);
+  }
+
+  mensajeEnviado() {
+    let toast = this.toastCtrl.create({
+      message: 'Gracias por contribuir a esta iniciativa, tu reporte sera procesado.',
+      duration: 5000,
+      position: 'middle'
+    });
+    toast.present();
   }
 }

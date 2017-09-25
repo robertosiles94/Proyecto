@@ -9,6 +9,7 @@ page-iniciativas {
 
     .titulo {
         font-weight: bold;
+        
     }
 
     .card {
@@ -19,9 +20,22 @@ page-iniciativas {
 
     .seleccion {
         max-width: 100%;
+        background-color: aliceblue;
     }
 
     .categoriaTitulo {
         margin-left: 10px;
+    }
+
+    .boton {
+        margin: 10px;
+    }
+
+    .buscador {
+        margin-top: 10px;
+    }
+
+    .titutloCategoria {
+        margin: 0;
     }
 }
