@@ -16,6 +16,8 @@ export class ServicesProvider {
   plataforma: string;
   iniciativas: any;
   data: any;
+  idIniciativa: any;
+  idUsuario: any;
   URLGlobal: any = 'http://bigwasi.org/Bigwasi/';
 
   constructor(public plt: Platform, public http: Http) {
@@ -23,6 +25,41 @@ export class ServicesProvider {
       this.iniciativas = data;
     });
     this.data = {};
+  }
+
+  getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  obtenerURLGlobal() {
+    return this.URLGlobal;
+  }
+
+  setIdUsuario(id) {
+    this.idUsuario = id;
+  }
+
+  getIdUsuario() {
+    return this.idUsuario;
+  }
+
+  setIdIniciativa(id) {
+    this.idIniciativa = id;
+  }
+
+  getIdIniciativa() {
+    return this.idIniciativa;
   }
 
   getPlataforma() {
@@ -48,11 +85,11 @@ export class ServicesProvider {
   }
 
   subirComentario(objetoComentario) {
-    console.log(objetoComentario);
+    console.log(objetoComentario.puntos);
     var link = this.URLGlobal + 'Comentario/Registar';
     let headers = new Headers();
     headers.append('Content-Type', 'text/plain');
-    this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&comentario=" + objetoComentario.comentario + "&Puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
+    this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&comentario=" + objetoComentario.comentario + "&puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
     .subscribe(data => {
         console.log(data);
     }, error => {
