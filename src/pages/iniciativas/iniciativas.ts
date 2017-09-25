@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ServicesProvider } from '../../providers/services/services';
 import { LoadingController } from 'ionic-angular';
+
+import { ModalController} from 'ionic-angular';
 /**
  * Generated class for the IniciativasPage page.
  *
@@ -18,14 +20,16 @@ export class IniciativasPage {
 
   iniciativas: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public services: ServicesProvider, public loadingCtrl: LoadingController) {
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams, public services: ServicesProvider, 
+    public loadingCtrl: LoadingController, public alertCtrl: AlertController,
+    public modalCtrl: ModalController) {
+
   }
 
   ionViewDidLoad() {
     setTimeout(() => {
       this.iniciativas = this.services.obtenerIniciativas().Iniciativas;
-    },3000);
+    }, 3000);
   }
 
   mostrarIniciativa(iniciativa) {
@@ -50,7 +54,7 @@ export class IniciativasPage {
   refrescarInicitavivas() {
     this.services.getIniciativas();
     let loader = this.loadingCtrl.create({
-        content: "Actualizando Iniciativas..."
+      content: "Actualizando Iniciativas..."
     });
     loader.present();
     setTimeout(() => {
@@ -61,5 +65,10 @@ export class IniciativasPage {
 
   darLike(iniciativa) {
     this.services.subirLike(iniciativa.idIniciativa);
+  }
+
+  opcionesLogin() {
+    let profileModal = this.modalCtrl.create('LoginPage');
+    profileModal.present();
   }
 }

@@ -1,0 +1,26 @@
+<ion-content padding>
+  <br>
+  <h1 class="titulo">Iniciar Sessión</h1>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Correo electrónico</ion-label>
+      <ion-input type="text" [(ngModel)]="correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!--<button ion-button clear class="texto-normal">Olvidé la contraseña</button>-->
+
+  <br>
+  <button ion-button outline round class="posicionar-doble texto-normal" (click)="dismiss()">Cancelar</button>
+  <button ion-button outline round class="posicionar-doble texto-normal">Iniciar Sesión</button>
+
+  <p class="recorrer-derecha">¿No tienes cuenta?
+    <button ion-button clear class="boton-registrar texto-normal" (click)="registrarse()">Regístrate</button>
+  </p>
+
+</ion-content>
