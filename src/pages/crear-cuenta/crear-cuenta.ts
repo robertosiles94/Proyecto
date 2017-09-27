@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
+import { ServicesProvider } from '../../providers/services/services';
 
 /**
  * Generated class for the CrearCuentaPage page.
@@ -21,7 +22,8 @@ export class CrearCuentaPage {
   contrasena: string;
   confirmContrasena: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, 
+    public services: ServicesProvider, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -33,7 +35,17 @@ export class CrearCuentaPage {
   }
 
   registrar() {
-    
+    if(this.contrasena ==  this.confirmContrasena) {
+      this.services.registrarUsuario({email: this.correo, nombreCompleto: this.nombre, telefono: this.telefono, password: this.contrasena});
+      this.dismiss();
+    } else {
+      let alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: 'Las contraseñas no coinciden.',
+        buttons: ['Aceptar']
+      });
+      alert.present();
+    }
   }
 
 }

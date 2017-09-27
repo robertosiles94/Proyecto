@@ -9,10 +9,7 @@
     </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button (click)="opcionesLogin()">
-          <ion-icon name="person" class="person-icon"></ion-icon>
-          <label>Iniciar Sesión</label>
-        </button>
+
       <button ion-button icon-only (click)="paginaInformacion()">
             <ion-icon name="information-circle"></ion-icon>
         </button>
@@ -23,9 +20,10 @@
       </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button icon-only (click)="iniciarSesion()">
-            <ion-icon name="contact"></ion-icon>
-        </button>
+      <button ion-button (click)="opcionesLogin()">
+        <ion-icon name="person" class="person-icon"></ion-icon>
+        <label>{{nombreUsuario}}</label>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>

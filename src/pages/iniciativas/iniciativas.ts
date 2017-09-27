@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { HttpModule } from '@angular/http';
-import { Http, Headers } from '@angular/http';
+import { Http } from '@angular/http';
 import { ServicesProvider } from '../../providers/services/services';
 import { LoadingController } from 'ionic-angular';
 
-import { ModalController } from 'ionic-angular';
+import { ModalController, Events } from 'ionic-angular';
 /**
  * Generated class for the IniciativasPage page.
  *
@@ -26,11 +25,26 @@ export class IniciativasPage {
   esUsuario: boolean;
   loader: any;
   categoriaSelecionada: string = "Todos";
+  idUsuario: any;
+  nombreUsuario: string = 'Iniciar Sesión';
+  correo: string;
+  telefono: string;
 
   constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public services: ServicesProvider,
-    public loadingCtrl: LoadingController, public alertCtrl: AlertController, public modalCtrl: ModalController) {
+    public loadingCtrl: LoadingController, public alertCtrl: AlertController, public modalCtrl: ModalController, public events: Events) {
     var usuario = this.services.getCookie("usuario");
-    this.esUsuario = usuario ? true : false;
+    if (usuario == "" || usuario == "0") {
+      this.esUsuario = false;
+    } else {
+      this.esUsuario = true;
+    }
+    this.nombreUsuario = this.services.getCookie("nombre");
+    this.correo = this.services.getCookie("email");
+    this.telefono = this.services.getCookie("telefono");
+
+    if (this.services.getCookie("usuario") == "" || this.services.getCookie("usuario") == "0") {
+      this.nombreUsuario = 'Iniciar Sesión';
+    }
   }
 
   getIniciativas() {
@@ -56,10 +70,6 @@ export class IniciativasPage {
     this.getCategorias();
   }
 
-  iniciarSesion() {
-    document.cookie = "usuario" + "=" + 1;
-  }
-
   obtenerCategorias() {
     this.getCategorias().then((data) => {
       this.categorias = data;
@@ -76,14 +86,12 @@ export class IniciativasPage {
 
   mostrarIniciativa(iniciativa) {
     document.cookie = "iniciativa" + "=" + iniciativa.idIniciativa;
-    document.cookie = "usuario" + "=" + 1;
     this.services.setIdIniciativa(iniciativa.idIniciativa);
     var objeto = { valor: 0 };
     this.navCtrl.push('IniciativaInfoPage', objeto);
   }
 
   mostrarIniciativaUsuario() {
-    var idUsuario = 1;
     this.navCtrl.push('HistorialUsuarioPage');
   }
 
@@ -135,7 +143,32 @@ export class IniciativasPage {
   }
 
   opcionesLogin() {
-    let profileModal = this.modalCtrl.create('LoginPage');
-    profileModal.present();
+    if (this.nombreUsuario == 'Iniciar Sesión') {
+      let profileModal = this.modalCtrl.create('LoginPage');
+      profileModal.present();
+    } else {
+      let alert = this.alertCtrl.create({
+        title: 'Datos Usuario',
+        subTitle: 'Nombre: ' + this.nombreUsuario + '<br>Correo: ' + this.correo + '<br>Teléfono: ' + this.telefono,
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel'
+          },
+          {
+            text: 'Cerrar Sesión',
+            handler: () => {
+              this.nombreUsuario = 'Iniciar Sesión';
+              document.cookie = "usuario" + "=" + 0;
+              document.cookie = "nombre" + "=" + '';
+              document.cookie = "telefono" + "=" + '';
+              document.cookie = "email" + "=" + '';
+              document.cookie = "iniciativa" + "=" + '';
+              window.location.reload();
+            }
+          }]
+      });
+      alert.present();
+    }
   }
 }
