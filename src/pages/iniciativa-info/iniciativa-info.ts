@@ -6,6 +6,9 @@ import { LatLng } from '@ionic-native/google-maps';
 import { AlertController } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
 import { ToastController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { ModalPage } from '../modal/modal';
+
 /**
  * Generated class for the IniciativaInfoPage page.
  *
@@ -42,7 +45,8 @@ export class IniciativaInfoPage {
   marcadoresUsuario: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
-    private fileChooser: FileChooser, private services: ServicesProvider, public alertCtrl: AlertController, public toastCtrl: ToastController) {
+    private fileChooser: FileChooser, private services: ServicesProvider, public alertCtrl: AlertController, 
+    public toastCtrl: ToastController,private modal:ModalController) {
     this.dispositivo = this.services.getPlataforma() == "web" ? false : true;
   }
 
@@ -187,8 +191,11 @@ export class IniciativaInfoPage {
     return cadena;
   }
 
-  subirArchivo() {
-
+  openModal() {
+    if (this.comentario != "") {
+      const myModal = this.modal.create('ModalPage');
+      myModal.present();
+    }
   }
 
   darLike() {

@@ -18,6 +18,7 @@ export class ServicesProvider {
   data: any;
   idIniciativa: any;
   idUsuario: any;
+  public valor:any;
   URLGlobal: any = 'http://bigwasi.org/Bigwasi/';
 
   constructor(public plt: Platform, public http: Http) {
@@ -91,6 +92,7 @@ export class ServicesProvider {
     headers.append('Content-Type', 'text/plain');
     this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&comentario=" + objetoComentario.comentario + "&puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
     .subscribe(data => {
+      this.valor=data.idComentario;
         console.log(data);
     }, error => {
         console.log("error");

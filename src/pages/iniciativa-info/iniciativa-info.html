@@ -55,7 +55,6 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <input type="file" name="archivo" id="archivo" *ngIf="true">
     <ion-row class="descripcion">
       <ion-col col-9>
         <ion-textarea type="text" placeholder="Escribir Reporte..." [(ngModel)]="comentario"></ion-textarea>
@@ -66,7 +65,7 @@
             </button>
       </ion-col>
       <ion-col col-2>
-        <button ion-button class="botones" (click)="subirComentario()">
+        <button ion-button class="botones" (click)="openModal(); subirComentario();">
                 <ion-icon name="send"></ion-icon>
             </button>
       </ion-col>
