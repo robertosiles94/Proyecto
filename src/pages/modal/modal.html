@@ -15,8 +15,8 @@
 
 <ion-content padding>
     <form id="myForm" action="http://bigwasi.org/Bigwasi/Comentario/Archivo" method="POST" enctype="multipart/form-data">
-      <img src="img/Tamaño.png"\> <br/>
-      <img src="img/AllowedFiles.png"\>
+      <img src="img/Tamaño.png"/> <br/>
+      <img src="img/AllowedFiles.png"/>
       <input type="file" name="prueba" id="prueba" *ngIf="true" accept="image/*,.doc,.docx,.pdf" required> <br/><br/>   
       <input type="text" name="idComentario" id="idComentario" value="{{idComentario}}" hidden/>
       <input type="button" value="Enviar" onclick="myForm.submit()"/> <br/> <br/>
