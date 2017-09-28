@@ -19,7 +19,7 @@
   <ion-label text-wrap>{{descripcion}}</ion-label>
   <ion-row>
     <ion-col col-6 style="padding: 5px;">
-      <button ion-button icon-left clear small (click)="darLike()">
+      <button ion-button icon-left clear small (click)="darLike()" [disabled]="!esUsuario">
               <ion-icon name="thumbs-up"></ion-icon>
               <div>{{likes}} likes</div>
       </button>
@@ -41,10 +41,7 @@
       <ion-scroll scrollY="true" class="lista">  
         <ion-list>
           <ion-item *ngFor="let c of comentarios">
-            <ion-avatar item-start>
-              <img src="img/avatar.jpg">
-            </ion-avatar>
-            <h2>Usuario</h2>
+            <h2>{{c.Usuario}}</h2>
             <p>Fecha publicada: {{c.fecha}}</p>
             <h4>{{c.descripcion}}</h4>
           </ion-item>
