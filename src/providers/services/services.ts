@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
@@ -65,7 +64,7 @@ export class ServicesProvider {
 
   getPlataforma() {
     var result = "";
-    if(this.plt.is('ios') || this.plt.is('android')) {
+    if (this.plt.is('ios') || this.plt.is('android')) {
       result = "dispositivo";
     } else {
       result = "web";
@@ -90,24 +89,36 @@ export class ServicesProvider {
     var link = this.URLGlobal + 'Comentario/Registar';
     let headers = new Headers();
     headers.append('Content-Type', 'text/plain');
-    this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&comentario=" + objetoComentario.comentario + "&puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
+    this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&idUsuario=" + this.getCookie("usuario") + "&comentario=" + objetoComentario.comentario + "&puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
     .subscribe(data => {
       this.valor=data.idComentario;
         console.log(data);
-    }, error => {
+      }, error => {
         console.log("error");
-    });
+      });
   }
 
   subirLike(idIniciativa) {
     let headers = new Headers();
-    let body = {idIniciativa: idIniciativa};
+    let body = { idIniciativa: idIniciativa, idUsuario: this.getCookie("usuario") };
     headers.append('Content-Type', 'text/plain');
-    this.http.post(this.URLGlobal + 'Iniciativa/Like' + "?idIniciativa="+idIniciativa, body, { headers: headers}).map(res => res.json())
-    .subscribe(data => {
+    this.http.post(this.URLGlobal + 'Iniciativa/Like' + "?idIniciativa=" + idIniciativa + "&idUsuario=" + this.getCookie("usuario"), body, { headers: headers }).map(res => res.json())
+      .subscribe(data => {
         console.log(data);
-    }, error => {
+      }, error => {
         console.log("error");
-    });
+      });
+  }
+
+  registrarUsuario(usuario) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'text/plain');
+    let options = new RequestOptions({ headers: headers });
+    this.http.post(this.URLGlobal + 'Usuario/Registro?email=' + usuario.email + '&nombreCompleto=' + usuario.nombreCompleto + '&telefono='
+      + usuario.telefono + '&password=' + usuario.password, usuario, options).subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      });
   }
 }

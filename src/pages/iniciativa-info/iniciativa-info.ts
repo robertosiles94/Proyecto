@@ -40,6 +40,7 @@ export class IniciativaInfoPage {
   area: any;
   puntos: any;
   iniciativa: any;
+  esUsuario: boolean;
   contadorMarcadores: number = 20;
   marcadoresLimite: number = 20;
   marcadoresUsuario: any;
@@ -48,6 +49,12 @@ export class IniciativaInfoPage {
     private fileChooser: FileChooser, private services: ServicesProvider, public alertCtrl: AlertController, 
     public toastCtrl: ToastController,private modal:ModalController) {
     this.dispositivo = this.services.getPlataforma() == "web" ? false : true;
+    var usuario = this.services.getCookie("usuario");
+    if (usuario == "" || usuario == "0") {
+      this.esUsuario = false;
+    } else {
+      this.esUsuario = true;
+    }
   }
 
   ionViewDidLoad() {
@@ -174,7 +181,7 @@ export class IniciativaInfoPage {
       this.services.subirComentario({ idIniciativa: this.idInicitiva, comentario: this.comentario, puntos: puntos });
       this.removerTodosLosMarcadores();
       this.marcadoresUsuario = [];    
-      this.mensajeEnviado(); 
+      //this.mensajeEnviado(); 
     }
     this.comentario = "";
   }

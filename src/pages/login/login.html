@@ -1,0 +1,46 @@
+<ion-content padding>
+  <br>
+  <h1 class="titulo">Iniciar Sessión</h1>
+  <form [formGroup]="formLogin">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Correo electrónico</ion-label>
+        <ion-input type="email" [(ngModel)]="correo" formControlName="email"></ion-input>
+      </ion-item>
+
+      <div *ngIf="formLogin.get('email').errors && formLogin.get('email').dirty">
+        <p color="danger" ion-text *ngIf="formLogin.get('email').hasError('required')">
+          El campo es requerido.
+        </p>
+      </div>
+
+      <ion-item>
+        <ion-label floating>Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="contrasena" formControlName="password" id="txtPassword"></ion-input>
+      </ion-item>
+
+      <div *ngIf="formLogin.get('password').errors && formLogin.get('password').dirty">
+        <p color="danger" ion-text *ngIf="formLogin.get('password').hasError('required')">
+          El campo es requerido.
+        </p>
+      </div>
+    </ion-list>
+
+    <br>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button outline round class="posicionar-doble texto-normal" (click)="dismiss()">Cancelar</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button outline round class="posicionar-doble texto-normal" type="submit" (click)="login()" block [disabled]="!formLogin.valid ">Iniciar Sesión</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <p class="recorrer-derecha">¿No tienes cuenta?
+    <button ion-button clear class="boton-registrar texto-normal" (click)="registrarse()">Regístrate</button>
+  </p>
+
+</ion-content>
