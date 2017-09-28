@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { ServicesProvider } from '../../providers/services/services';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
  * Generated class for the CrearCuentaPage page.
@@ -21,9 +22,11 @@ export class CrearCuentaPage {
   correo: string;
   contrasena: string;
   confirmContrasena: string;
+  formRegister: FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, 
-    public services: ServicesProvider, private alertCtrl: AlertController) {
+    public services: ServicesProvider, private alertCtrl: AlertController, public formBuilder: FormBuilder) {
+      this.formRegister = this.createRegisterForm();
   }
 
   ionViewDidLoad() {
@@ -32,6 +35,15 @@ export class CrearCuentaPage {
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+  createRegisterForm() {
+    return this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      contrasena: ['', [Validators.required]],
+      confirmarContrasena: ['', [Validators.required]],
+      nombre: ['', [Validators.required, Validators.pattern('^([A-Za-záéíóú ])+$')]],
+      telefono: ['', [Validators.pattern('^([4]{1}[0-9]{6})$|^([6-7]{1}[0-9]{7})$')]]
+    })
   }
 
   registrar() {
