@@ -43,7 +43,7 @@
           <ion-item *ngFor="let c of comentarios">
             <h2>{{c.Usuario}}</h2>
             <p>Fecha publicada: {{c.fecha}}</p>
-            <h4>{{c.descripcion}}</h4>
+            <h4 text-wrap>{{c.descripcion}}</h4>
           </ion-item>
         </ion-list>
       </ion-scroll>

@@ -42,7 +42,7 @@ export class IniciativaInfoPage {
   iniciativa: any;
   esUsuario: boolean;
   contadorMarcadores: number = 20;
-  marcadoresLimite: number = 20;
+  marcadoresLimite: number = 2000;
   marcadoresUsuario: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
@@ -124,7 +124,7 @@ export class IniciativaInfoPage {
   }
 
   clickMapa(punto) {
-    if (this.contadorMarcadores > 0) {
+    if (this.contadorMarcadores > 0 && this.esUsuario) {
       var marker = new google.maps.Marker({
         position: punto.latLng,
         map: this.map
