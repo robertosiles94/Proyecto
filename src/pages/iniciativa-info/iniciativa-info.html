@@ -6,12 +6,16 @@
 -->
 <ion-header>
   <ion-navbar color="verde">
-    <ion-title>{{titulo}}</ion-title>
+    <ion-title text-wrap>{{titulo}}</ion-title>
+    <ion-buttons end *ngIf="esUsuario">
+        <ion-icon name="person" class="person-icon"></ion-icon>
+        <label style="color:white">{{nombreUsuario}}</label>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content >
   <h3>Descripcion</h3>
   <p>
     {{fecha}}
@@ -42,8 +46,9 @@
         <ion-list>
           <ion-item *ngFor="let c of comentarios">
             <h2>{{c.Usuario}}</h2>
-            <p>Fecha publicada: {{c.fecha}}</p>
+            <p text-wrap>Fecha publicada: {{c.fecha}} <b class="{{c.estado}}">{{c.estado}}</b></p>
             <h4 text-wrap>{{c.descripcion}}</h4>
+            <a href="{{c.archivo}}" *ngIf="c.archivo != ''">Archivo Adjunto</a>
           </ion-item>
         </ion-list>
       </ion-scroll>
@@ -54,7 +59,7 @@
   <ion-toolbar>
     <ion-row class="descripcion">
       <ion-col col-9>
-        <ion-textarea type="text" placeholder="Escribir Reporte..." [(ngModel)]="comentario"></ion-textarea>
+        <ion-textarea type="text" maxlength="700" placeholder="Escribir Reporte..."  [(ngModel)]="comentario"></ion-textarea>
       </ion-col>
       <ion-col col-1>
         <button ion-button class="botones" clear (click)="abrirArchivos()" *ngIf="false">
@@ -62,7 +67,7 @@
             </button>
       </ion-col>
       <ion-col col-2>
-        <button ion-button class="botones" (click)="openModal(); subirComentario();">
+        <button ion-button class="botones" (click)="openModal(); subirComentario();" [disabled]="esCometarioVacio()">
                 <ion-icon name="send"></ion-icon>
             </button>
       </ion-col>

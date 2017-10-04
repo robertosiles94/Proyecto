@@ -16,7 +16,7 @@ page-iniciativas {
         img {
             height: 200px;
         }
-        height: 400px;
+        height: 430px;
     }
 
     .texto {
@@ -27,6 +27,12 @@ page-iniciativas {
     .seleccion {
         max-width: 100%;
         background-color: aliceblue;
+    }
+
+    .descripcion {
+        width: 100%;
+        height: 100px;
+        margin: 5px;
     }
 
     .categoriaTitulo {

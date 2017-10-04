@@ -70,10 +70,11 @@ export class LoginPage {
               document.cookie = "nombre" + "=" + this.profile.nombre;
               document.cookie = "telefono" + "=" + this.profile.telefono;
               document.cookie = "email" + "=" + this.profile.email;
-              window.location.reload();
+              //window.location.reload();
+              this.navCtrl.push('IniciativasPage');
             });
           } else {
-            window.location.href = "http://bigwasi.org/Bigwasi";
+            window.location.href = "http://bigwasi.org/Bigwasi/";
           }
         } else {
           let alert = this.alertCtrl.create({

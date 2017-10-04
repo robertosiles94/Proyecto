@@ -8,14 +8,31 @@
 
   <ion-navbar color="verde">
     <ion-title>Mi Historial</ion-title>
+    <ion-buttons end *ngIf="esUsuario">
+      <ion-icon name="person" class="person-icon"></ion-icon>
+      <label style="color:white">{{nombreUsuario}}</label>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content class="fondo">
   <ion-row>
-    <ion-col col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of iniciativas">
+    <ion-col col-8>
+      <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar Iniciativa..." class="buscador">
+      </ion-searchbar>
+    </ion-col>
+    <ion-col col-4>
+      <ion-label class="titutloCategoria"><b>Categoria:</b></ion-label>
+      <ion-select [(ngModel)]="categoriaSelecionada" (ionChange)="onSelectChange($event)" class="seleccion">
+        <ion-label>Categoria</ion-label>
+        <ion-option value="Todos">Todos</ion-option>
+        <ion-option value="{{c}}" *ngFor="let c of categorias">{{c}}</ion-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of listaVisible">
       <ion-card (click)="mostrarIniciativa(i)" class="card">
         <img src="http://bigwasi.org/Bigwasi/images/Iniciativas/{{i.imagen}}" class="imagen">
         <ion-card-header class="titulo" color="cafe">

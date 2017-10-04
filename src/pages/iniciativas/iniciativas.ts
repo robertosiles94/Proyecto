@@ -29,6 +29,7 @@ export class IniciativasPage {
   nombreUsuario: string = 'Iniciar Sesión';
   correo: string;
   telefono: string;
+  titulo:string = "Iniciativas";
 
   constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public services: ServicesProvider,
     public loadingCtrl: LoadingController, public alertCtrl: AlertController, public modalCtrl: ModalController, public events: Events) {
@@ -103,8 +104,6 @@ export class IniciativasPage {
       this.listaVisible = this.iniciativas.filter((item) => {
         return (item.titulo.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
-    } else {
-      this.cargarCategoria(this.categoriaSelecionada);
     }
   }
 

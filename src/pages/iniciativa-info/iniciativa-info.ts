@@ -28,7 +28,7 @@ export class IniciativaInfoPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   comentarios: any;
-  comentario: string;
+  comentario: string = "";
   likes: string;
   comentariosTotal: string;
   dispositivo: boolean;
@@ -41,15 +41,19 @@ export class IniciativaInfoPage {
   puntos: any;
   iniciativa: any;
   esUsuario: boolean;
-  contadorMarcadores: number = 20;
+  contadorMarcadores: number = 2000;
   marcadoresLimite: number = 2000;
   marcadoresUsuario: any;
+  nombreUsuario: string;
+  comentarioVacio: boolean = true;
+  archivo:string = "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
     private fileChooser: FileChooser, private services: ServicesProvider, public alertCtrl: AlertController, 
     public toastCtrl: ToastController,private modal:ModalController) {
     this.dispositivo = this.services.getPlataforma() == "web" ? false : true;
     var usuario = this.services.getCookie("usuario");
+    this.nombreUsuario = this.services.getCookie("nombre");
     if (usuario == "" || usuario == "0") {
       this.esUsuario = false;
     } else {
@@ -68,6 +72,10 @@ export class IniciativaInfoPage {
     }
   }
 
+  esCometarioVacio() {
+    return this.comentario == "";
+  }
+
   cargarIniciativaUsuario() {
     this.titulo = this.navParams.data.iniciativa.titulo;
     this.descripcion = this.navParams.data.iniciativa.descripcion;
@@ -79,6 +87,7 @@ export class IniciativaInfoPage {
     this.comentariosTotal = this.comentarios.length;
     this.likes = this.navParams.data.iniciativa.likes;
     this.puntos = this.navParams.data.iniciativa.puntos;
+    this.archivo = this.navParams.data.iniciativa.archivo;
     this.cargarIniciativasDeComentariosMapa();
     this.marcadoresUsuario = [];
   }
@@ -94,6 +103,7 @@ export class IniciativaInfoPage {
     this.comentariosTotal = this.comentarios.length;
     this.likes = this.iniciativa.likes;
     this.puntos = this.iniciativa.puntos;
+    this.archivo = this.iniciativa.archivo;
     this.marcadoresUsuario = [];
   }
 
@@ -136,6 +146,17 @@ export class IniciativaInfoPage {
         this.mensajeEliminaMarcador(marker);
       });
     }
+  }
+
+  addInfoWindowToMarker(object) {
+    console.log(object);
+    var infoWindowContent = '<div id="content"><p><b>' + object.Comment.Usuario + '</b></p><p>'+ object.Comment.descripcion + '</p></div>';
+    var infoWindow = new google.maps.InfoWindow({
+      content: infoWindowContent
+    });
+    object.Marker.addListener('click', () => {
+      infoWindow.open(this.map, object.Marker);
+    });
   }
 
   mensajeEliminaMarcador(marcador) {
@@ -228,6 +249,7 @@ export class IniciativaInfoPage {
   }
 
   graficarPuntosiniciativaEnMapa(marcadores) {
+    var c = 0;
     for (let i = 0; i < marcadores.length; i++) {
       let marcador: LatLng = new LatLng(marcadores[i].lat, marcadores[i].lng);
       var marker = new google.maps.Marker({
@@ -235,6 +257,11 @@ export class IniciativaInfoPage {
         map: this.map
       });
       marker.setMap(this.map);
+      if (this.comentarios.length > c) {
+        var object = { Marker: marker, Comment: this.comentarios[c] }
+        this.addInfoWindowToMarker(object);
+        c = c + 1;
+      }
     }
   }
 

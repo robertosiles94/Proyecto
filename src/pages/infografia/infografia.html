@@ -1,0 +1,88 @@
+<!--
+  Generated template for the InfografiaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="verde">
+    <ion-title>
+      <h2>BIGWASI</h2>
+    </ion-title>
+    <ion-buttons left class="iconos">
+      <button ion-button icon-only (click)="paginaInformacion()">
+            <img src="img/logo1.png" class="imagen">
+        </button>
+    </ion-buttons>
+    <ion-buttons end class="iconos">
+      Siguenos en 
+      <a ion-button icon-only href="https://www.facebook.com/Bigwasi/">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-buttons end>
+      <a ion-button icon-only href="https://twitter.com/Bigwasi_Bolivia">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-buttons end>
+        <a ion-button icon-only href="https://www.instagram.com/bigwasi/">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </ion-buttons>
+    <h4 style="color:white;">BigWasi es una plataforma virtual para compartir datos útiles de tu ciudad, tu barrio o comunidad.</h4>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="fondo">
+  <ion-row>
+    <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+      <ion-card>
+        <div>
+        <ion-item>
+          <ion-icon name="contact" item-start></ion-icon>
+          <h2 text-wrap><b>Nuevo</b></h2>
+        </ion-item>
+      </div>
+        <div class="reportar">
+        <p>Quieres reportar?</p>
+        <button ion-button (click)="registrarse()">Registrate</button>
+      </div>
+      </ion-card>
+    </ion-col>
+    <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+        <ion-card>
+          <div>
+          <ion-item>
+            <ion-icon name="contact" item-start></ion-icon>
+            <h2 text-wrap><b>Usuario Bigwasi</b></h2>
+          </ion-item>
+        </div>
+          <div class="reportar">
+          <p>Ya tienes cuenta?</p>
+          <button ion-button (click)="opcionesLogin()">Iniciar Sesion</button>
+        </div>
+        </ion-card>
+      </ion-col>
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+          <ion-card>
+            <div>
+            <ion-item>
+              <ion-icon name="contact" item-start></ion-icon>
+              <h2 text-wrap><b>Visitante</b></h2>
+            </ion-item>
+          </div>
+            <div class="reportar">
+            <p>Quieres ver las iniciativas?</p>
+            <button ion-button (click)="iniciativas()">Iniciativas</button>
+          </div>
+          </ion-card>
+        </ion-col>
+  </ion-row>
+  <img src="img/imagen1.png" class="imagenBigwasi">
+  <img src="img/imagen2.png" class="imagenBigwasi2">
+  <img src="img/imagen3.png" class="imagenBigwasi2">
+</ion-content>
