@@ -15,8 +15,9 @@
             <img src="img/logo1.png" class="imagen">
         </button>
     </ion-buttons>
-    <ion-buttons end class="iconos">
-      Siguenos en 
+  </ion-navbar>
+  <ion-toolbar color="verde">
+    <ion-buttons end class="iconos"> 
       <a ion-button icon-only href="https://www.facebook.com/Bigwasi/">
         <ion-icon name="logo-facebook"></ion-icon>
       </a>
@@ -31,8 +32,18 @@
           <ion-icon name="logo-instagram"></ion-icon>
         </a>
       </ion-buttons>
-    <h4 style="color:white;">BigWasi es una plataforma virtual para compartir datos útiles de tu ciudad, tu barrio o comunidad.</h4>
-  </ion-navbar>
+      <ion-buttons end class="iconos"> 
+          <a ion-button icon-only href="https://www.youtube.com/channel/UC_1Ezlo9YlyGl3TNy9NGEPg">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+        </ion-buttons>
+        <ion-buttons end class="iconos"> 
+            <a ion-button icon-only (click)="email()">
+              <ion-icon name="mail"></ion-icon>
+            </a>
+          </ion-buttons>
+      <ion-title>BigWasi es una plataforma virtual para compartir datos útiles de tu ciudad, tu barrio o comunidad.</ion-title>
+  </ion-toolbar>
 
 </ion-header>
 

@@ -38,4 +38,8 @@ export class InfografiaPage {
     this.navCtrl.push('IniciativasPage');
   }
 
+  email(){
+    alert("reportesbigwasi@gmail.com");
+  }
+
 }

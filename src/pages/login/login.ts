@@ -30,10 +30,6 @@ export class LoginPage {
     this.formLogin = this.createLoginForm();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
-
   dismiss() {
     this.viewCtrl.dismiss();
   }
