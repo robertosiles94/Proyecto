@@ -1,13 +1,11 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FileChooser } from '@ionic-native/file-chooser';
 import { ServicesProvider } from '../../providers/services/services';
 import { LatLng } from '@ionic-native/google-maps';
 import { AlertController } from 'ionic-angular';
-import { Http, Headers } from '@angular/http';
+import { Http } from '@angular/http';
 import { ToastController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
-import { ModalPage } from '../modal/modal';
 
 /**
  * Generated class for the IniciativaInfoPage page.
@@ -47,18 +45,23 @@ export class IniciativaInfoPage {
   nombreUsuario: string;
   comentarioVacio: boolean = true;
   archivo:string = "";
+  correo: string;
+  telefono: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
-    private fileChooser: FileChooser, private services: ServicesProvider, public alertCtrl: AlertController, 
-    public toastCtrl: ToastController,private modal:ModalController) {
+    private services: ServicesProvider, public alertCtrl: AlertController, 
+    public toastCtrl: ToastController, private modal:ModalController) {
     this.dispositivo = this.services.getPlataforma() == "web" ? false : true;
     var usuario = this.services.getCookie("usuario");
-    this.nombreUsuario = this.services.getCookie("nombre");
     if (usuario == "" || usuario == "0") {
       this.esUsuario = false;
+      this.nombreUsuario = 'Iniciar Sesión';
     } else {
+      this.nombreUsuario = this.services.getCookie("nombre");
       this.esUsuario = true;
     }
+    this.correo = this.services.getCookie("email");
+    this.telefono = this.services.getCookie("telefono");
   }
 
   ionViewDidLoad() {
@@ -285,5 +288,41 @@ export class IniciativaInfoPage {
       position: 'middle'
     });
     toast.present();
+  }
+
+  opcionesLogin() {
+    if (this.nombreUsuario == 'Iniciar Sesión') {
+      let profileModal = this.modal.create('LoginPage');
+      profileModal.present();
+    } else {
+      if (this.telefono == 'undefine') {
+        this.telefono = "N/A";
+      }
+      let alert = this.alertCtrl.create({
+        title: 'Datos Usuario',
+        subTitle: 'Nombre: ' + this.nombreUsuario + '<br>Correo: ' + this.correo + '<br>Teléfono: ' + this.telefono,
+        buttons: [
+          {
+            text: 'Modificar',
+            handler: () => {
+              let perfilModal = this.modal.create('PerfilPage');
+              perfilModal.present();
+            }
+          },
+          {
+            text: 'Cerrar Sesión',
+            handler: () => {
+              this.nombreUsuario = 'Iniciar Sesión';
+              document.cookie = "usuario" + "=" + 0;
+              document.cookie = "nombre" + "=" + '';
+              document.cookie = "telefono" + "=" + '';
+              document.cookie = "email" + "=" + '';
+              document.cookie = "iniciativa" + "=" + '';
+              this.navCtrl.push('IniciativasPage');
+            }
+          }]
+      });
+      alert.present();
+    }
   }
 }

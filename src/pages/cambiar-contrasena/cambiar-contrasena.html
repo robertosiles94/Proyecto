@@ -1,0 +1,52 @@
+<ion-content padding>
+    <h1 class="titulo">Cambiar contraseña</h1>
+    <form [formGroup]="formRegister">
+      <ion-list class="subir-lista">
+        <ion-item>
+          <ion-label floating>Contraseña anterior: </ion-label>
+          <ion-input type="password" [(ngModel)]="antiguaContrasena" formControlName="contrasenaAntigua" required></ion-input>
+        </ion-item>
+  
+        <div *ngIf="formRegister.get('contrasenaAntigua').errors && formRegister.get('contrasenaAntigua').dirty">
+          <p color="danger" ion-text *ngIf="formRegister.get('contrasenaAntigua').hasError('required')">
+            El campo es requerido.
+          </p>
+        </div>
+  
+        <ion-item>
+          <ion-label floating>Contraseña: </ion-label>
+          <ion-input type="password" [(ngModel)]="contrasena" formControlName="contrasena" required></ion-input>
+        </ion-item>
+  
+        <div *ngIf="formRegister.get('contrasena').errors && formRegister.get('contrasena').dirty">
+          <p color="danger" ion-text *ngIf="formRegister.get('contrasena').hasError('required')">
+            El campo es requerido.
+          </p>
+        </div>
+  
+        <ion-item>
+          <ion-label floating>Confirmar contraseña: </ion-label>
+          <ion-input type="password" [(ngModel)]="confirmContrasena" formControlName="confirmarContrasena" required></ion-input>
+        </ion-item>
+  
+        <div *ngIf="formRegister.get('confirmarContrasena').errors && formRegister.get('confirmarContrasena').dirty">
+          <p color="danger" ion-text *ngIf="formRegister.get('confirmarContrasena').hasError('required')">
+            El campo es requerido.
+          </p>
+        </div>
+      </ion-list>
+  
+      <br>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button ion-button outline round class="posicionar-doble texto-normal" (click)="dismiss()">Cancelar</button>
+          </ion-col>
+          <ion-col>
+            <button ion-button outline round class="posicionar-doble texto-normal" (click)="cambiarContrasena()" type="submit" block [disabled]="!formRegister.valid ">Guardar</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>
+  

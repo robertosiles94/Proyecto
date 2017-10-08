@@ -17,7 +17,7 @@ export class ServicesProvider {
   data: any;
   idIniciativa: any;
   idUsuario: any;
-  public valor:any;
+  public valor: any;
   URLGlobal: any = 'http://bigwasi.org/Bigwasi/';
 
   constructor(public plt: Platform, public http: Http) {
@@ -89,9 +89,9 @@ export class ServicesProvider {
     var link = this.URLGlobal + 'Comentario/Registar';
     let headers = new Headers();
     headers.append('Content-Type', 'text/plain');
-    this.http.post(link + "?idIniciativa="+objetoComentario.idIniciativa + "&idUsuario=" + this.getCookie("usuario") + "&comentario=" + objetoComentario.comentario + "&puntos=["+ objetoComentario.puntos + "]", objetoComentario,{ headers: headers}).map(res => res.json())
-    .subscribe(data => {
-      this.valor=data.idComentario;
+    this.http.post(link + "?idIniciativa=" + objetoComentario.idIniciativa + "&idUsuario=" + this.getCookie("usuario") + "&comentario=" + objetoComentario.comentario + "&puntos=[" + objetoComentario.puntos + "]", objetoComentario, { headers: headers }).map(res => res.json())
+      .subscribe(data => {
+        this.valor = data.idComentario;
         console.log(data);
       }, error => {
         console.log("error");

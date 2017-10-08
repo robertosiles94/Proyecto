@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 import { ServicesProvider } from '../../providers/services/services';
 import { LoadingController } from 'ionic-angular';
 
-import { ModalController, Events } from 'ionic-angular';
+import { ModalController} from 'ionic-angular';
 /**
  * Generated class for the IniciativasPage page.
  *
@@ -32,7 +32,7 @@ export class IniciativasPage {
   titulo:string = "Iniciativas";
 
   constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public services: ServicesProvider,
-    public loadingCtrl: LoadingController, public alertCtrl: AlertController, public modalCtrl: ModalController, public events: Events) {
+    public loadingCtrl: LoadingController, public alertCtrl: AlertController, public modalCtrl: ModalController) {
     var usuario = this.services.getCookie("usuario");
     if (usuario == "" || usuario == "0") {
       this.esUsuario = false;
@@ -143,13 +143,19 @@ export class IniciativasPage {
       let profileModal = this.modalCtrl.create('LoginPage');
       profileModal.present();
     } else {
+      if (this.telefono == 'undefine' || this.telefono == '') {
+        this.telefono = "N/A";
+      }
       let alert = this.alertCtrl.create({
         title: 'Datos Usuario',
         subTitle: 'Nombre: ' + this.nombreUsuario + '<br>Correo: ' + this.correo + '<br>Teléfono: ' + this.telefono,
         buttons: [
           {
-            text: 'Cancelar',
-            role: 'cancel'
+            text: 'Modificar',
+            handler: () => {
+              let perfilModal = this.modalCtrl.create('PerfilPage');
+              perfilModal.present();
+            }
           },
           {
             text: 'Cerrar Sesión',

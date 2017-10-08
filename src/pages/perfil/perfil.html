@@ -1,0 +1,46 @@
+<ion-content padding>
+  <h1 class="titulo">Editar datos personales</h1>
+  <form [formGroup]="formRegister">
+    <ion-list class="subir-lista">
+      <ion-item>
+        <ion-label floating>Nombre completo: </ion-label>
+        <ion-input type="text" [(ngModel)]="nombre" required formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <div *ngIf="formRegister.get('nombre').errors && formRegister.get('nombre').dirty">
+        <p color="danger" ion-text *ngIf="formRegister.get('nombre').hasError('required')">
+          El campo es requerido.
+        </p>
+        <p color="danger" ion-text *ngIf="formRegister.get('nombre').hasError('pattern')">
+          Solo se aceptan letras sin caracteres especiales.
+        </p>
+      </div>
+
+      <ion-item>
+        <ion-label floating>Teléfono: </ion-label>
+        <ion-input type="text" [(ngModel)]="telefono" formControlName="telefono"></ion-input>
+      </ion-item>
+
+      <div *ngIf="formRegister.get('telefono').errors && formRegister.get('telefono').dirty">
+        <p color="danger" ion-text *ngIf="formRegister.get('telefono').hasError('pattern')">
+          Solo se aceptan teléfonos fijos (7 dígitos) o celulares (8 dígitos).
+        </p>
+      </div>
+    </ion-list>
+
+    <br>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button outline round class="texto-normal" (click)="dismiss()">Cancelar</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button outline round class="texto-normal" (click)="cambiarContrasena()">Cambiar contraseña</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button outline round class="texto-normal" (click)="editarUsuario()" type="submit" block [disabled]="!formRegister.valid ">Guardar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
