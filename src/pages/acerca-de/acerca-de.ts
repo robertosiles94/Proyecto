@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ModalController, Events } from 'ionic-angular';
+import { ServicesProvider } from '../../providers/services/services';
 /**
  * Generated class for the AcercaDePage page.
  *
@@ -19,11 +20,20 @@ export class AcercaDePage {
   idUsuario: any;
   correo: string;
   telefono: string;
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams, public modalCtrl: ModalController, public events: Events) {
-  }
+  esUsuario: boolean;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AcercaDePage');
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams, 
+    public modalCtrl: ModalController, public events: Events, private services: ServicesProvider) {
+      var usuario = this.services.getCookie("usuario");
+      if (usuario == "" || usuario == "0") {
+        this.esUsuario = false;
+        this.nombreUsuario = 'Iniciar Sesión';
+      } else {
+        this.nombreUsuario = this.services.getCookie("nombre");
+        this.esUsuario = true;
+      }
+      this.correo = this.services.getCookie("email");
+      this.telefono = this.services.getCookie("telefono");
   }
 
   opcionesLogin() {
@@ -31,13 +41,19 @@ export class AcercaDePage {
       let profileModal = this.modalCtrl.create('LoginPage');
       profileModal.present();
     } else {
+      if (this.telefono == 'undefine') {
+        this.telefono = "N/A";
+      }
       let alert = this.alertCtrl.create({
         title: 'Datos Usuario',
         subTitle: 'Nombre: ' + this.nombreUsuario + '<br>Correo: ' + this.correo + '<br>Teléfono: ' + this.telefono,
         buttons: [
           {
-            text: 'Cancelar',
-            role: 'cancel'
+            text: 'Modificar',
+            handler: () => {
+              let perfilModal = this.modalCtrl.create('PerfilPage');
+              perfilModal.present();
+            }
           },
           {
             text: 'Cerrar Sesión',
@@ -48,7 +64,7 @@ export class AcercaDePage {
               document.cookie = "telefono" + "=" + '';
               document.cookie = "email" + "=" + '';
               document.cookie = "iniciativa" + "=" + '';
-              window.location.reload();
+              this.navCtrl.push('IniciativasPage');
             }
           }]
       });

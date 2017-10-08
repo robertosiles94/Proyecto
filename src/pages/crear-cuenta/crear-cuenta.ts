@@ -29,10 +29,6 @@ export class CrearCuentaPage {
       this.formRegister = this.createRegisterForm();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CrearCuentaPage');
-  }
-
   dismiss() {
     this.viewCtrl.dismiss();
   }

@@ -7,15 +7,17 @@
 <ion-header>
   <ion-navbar color="verde">
     <ion-title text-wrap>{{titulo}}</ion-title>
-    <ion-buttons end *ngIf="esUsuario">
+    <ion-buttons end>
+      <button ion-button (click)="opcionesLogin()">
         <ion-icon name="person" class="person-icon"></ion-icon>
-        <label style="color:white">{{nombreUsuario}}</label>
+        <label>{{nombreUsuario}}</label>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content >
+<ion-content>
   <h3>Descripcion</h3>
   <p>
     {{fecha}}
@@ -41,8 +43,8 @@
       <div #map id="map" name="map"></div>
     </ion-col>
     <ion-col col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6>
-        <ion-label style="margin-top:35px;"><b>Reportes de la Iniciativa:</b></ion-label>
-      <ion-scroll scrollY="true" class="lista">  
+      <ion-label style="margin-top:35px;"><b>Reportes de la Iniciativa:</b></ion-label>
+      <ion-scroll scrollY="true" class="lista">
         <ion-list>
           <ion-item *ngFor="let c of comentarios">
             <h2>{{c.Usuario}}</h2>
@@ -59,7 +61,7 @@
   <ion-toolbar>
     <ion-row class="descripcion">
       <ion-col col-9>
-        <ion-textarea type="text" maxlength="700" placeholder="Escribir Reporte..."  [(ngModel)]="comentario"></ion-textarea>
+        <ion-textarea type="text" maxlength="700" placeholder="Escribir Reporte..." [(ngModel)]="comentario"></ion-textarea>
       </ion-col>
       <ion-col col-1>
         <button ion-button class="botones" clear (click)="abrirArchivos()" *ngIf="false">

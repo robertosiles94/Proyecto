@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServicesProvider } from '../../providers/services/services';
-import { ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the ModalPage page.
@@ -18,7 +17,7 @@ import { ModalController } from 'ionic-angular';
 export class ModalPage {
   idComentario: any;
   public files: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private services: ServicesProvider, private modal: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private services: ServicesProvider) {
     setTimeout(() => {
       this.idComentario = this.services.valor;
     }, 2000);
