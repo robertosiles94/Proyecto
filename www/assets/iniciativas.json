@@ -1,0 +1,1862 @@
+{
+    "Iniciativas": [
+        {
+            "idIniciativa": "19",
+            "titulo": "A Prueba Cambio Todo",
+            "descripcion": "Modificacion Foto",
+            "imagen": "19.png",
+            "NroComentarios": "0",
+            "likes": "1",
+            "Comentarios": [
+                {
+                    "idComentario": "166",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-23 12:21:36",
+                    "archivo": "166",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": -17.2221347888,
+                    "lng": -66.26953125
+                },
+                {
+                    "lat": -17.5183441879,
+                    "lng": -66.2503051758
+                },
+                {
+                    "lat": -17.289020298,
+                    "lng": -65.9989929199
+                },
+                {
+                    "lat": -17.3021322575,
+                    "lng": -66.1692810059
+                }
+            ],
+            "area": "0",
+            "Categoria": "Medio Ambiente"
+        },
+        {
+            "idIniciativa": "1",
+            "titulo": "MI LUGAR FAVORITO",
+            "descripcion": "Comparte tu lugar favorito en la ciudad. Dale al bot\u00f3n moradito",
+            "imagen": "1.jpg",
+            "NroComentarios": "10",
+            "likes": "7",
+            "Comentarios": [
+                {
+                    "idComentario": "149",
+                    "descripcion": "asdas",
+                    "fecha": "2017-09-22 00:05:36",
+                    "archivo": "149",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "148",
+                    "descripcion": "a;slkjd;aklsjd;ak",
+                    "fecha": "2017-09-22 00:05:21",
+                    "archivo": "148",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "147",
+                    "descripcion": "kjhohlj",
+                    "fecha": "2017-09-22 00:04:21",
+                    "archivo": "147",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "146",
+                    "descripcion": "Deberia funcionar",
+                    "fecha": "2017-09-22 00:04:05",
+                    "archivo": "146",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "145",
+                    "descripcion": "wejhqlwjelqkwjhlj",
+                    "fecha": "2017-09-21 23:57:29",
+                    "archivo": "145",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "143",
+                    "descripcion": "Preba con imagen",
+                    "fecha": "2017-09-21 23:32:19",
+                    "archivo": "143",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.3585030253,
+                            "lng": -66.1926269531
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "142",
+                    "descripcion": "Prueba",
+                    "fecha": "2017-09-21 23:30:32",
+                    "archivo": "142",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.3866819132,
+                            "lng": -66.1636161804
+                        },
+                        {
+                            "lat": -17.3795556855,
+                            "lng": -66.1576938629
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "132",
+                    "descripcion": "cemnterio",
+                    "fecha": "2017-09-17 21:51:28",
+                    "archivo": "132",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.4068713842,
+                            "lng": -66.1595392227
+                        },
+                        {
+                            "lat": -17.409778812,
+                            "lng": -66.1580371857
+                        },
+                        {
+                            "lat": -17.4080998805,
+                            "lng": -66.1626720428
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "128",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-17 21:41:04",
+                    "archivo": "128",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.3886477203,
+                            "lng": -66.177520752
+                        },
+                        {
+                            "lat": -17.3886477203,
+                            "lng": -66.177520752
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "127",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 21:40:36",
+                    "archivo": "127",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "126",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-17 21:38:16",
+                    "archivo": "126",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.3886477203,
+                            "lng": -66.177520752
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "119",
+                    "descripcion": "prueba marcadores",
+                    "fecha": "2017-09-17 21:28:18",
+                    "archivo": "119",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "104",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-17 14:57:26",
+                    "archivo": "104",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": 122,
+                            "lng": 123
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "102",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:06:05",
+                    "archivo": "102",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.3886477203,
+                            "lng": -66.177520752
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "101",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:05:44",
+                    "archivo": "101",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": 122,
+                            "lng": 123
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "100",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:03:45",
+                    "archivo": "100",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "98",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:03:43",
+                    "archivo": "98",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "99",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:03:43",
+                    "archivo": "99",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "95",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:03:41",
+                    "archivo": "95",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "96",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:03:41",
+                    "archivo": "96",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "97",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:03:41",
+                    "archivo": "97",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "93",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:03:40",
+                    "archivo": "93",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "94",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:03:40",
+                    "archivo": "94",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "92",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:03:38",
+                    "archivo": "92",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "91",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:03:26",
+                    "archivo": "91",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "89",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:00:29",
+                    "archivo": "89",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "90",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:00:29",
+                    "archivo": "90",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "88",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:00:28",
+                    "archivo": "88",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "87",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 23:00:26",
+                    "archivo": "87",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "86",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:00:22",
+                    "archivo": "86",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "85",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 23:00:10",
+                    "archivo": "85",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "84",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:56:55",
+                    "archivo": "84",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "83",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 22:55:34",
+                    "archivo": "83",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "82",
+                    "descripcion": "haha",
+                    "fecha": "2017-09-16 22:55:14",
+                    "archivo": "82",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "81",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:46:52",
+                    "archivo": "81",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "80",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:46:39",
+                    "archivo": "80",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "79",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:46:37",
+                    "archivo": "79",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "78",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:45:18",
+                    "archivo": "78",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "77",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:45:00",
+                    "archivo": "77",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "76",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:41:48",
+                    "archivo": "76",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "75",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:40:04",
+                    "archivo": "75",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "74",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:35:49",
+                    "archivo": "74",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "73",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:35:32",
+                    "archivo": "73",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "72",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:34:49",
+                    "archivo": "72",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "71",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:32:21",
+                    "archivo": "71",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "70",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:32:13",
+                    "archivo": "70",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "69",
+                    "descripcion": "hhhhhh",
+                    "fecha": "2017-09-16 22:31:19",
+                    "archivo": "69",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "68",
+                    "descripcion": "zdasda",
+                    "fecha": "2017-09-16 22:30:33",
+                    "archivo": "68",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "67",
+                    "descripcion": "asdad",
+                    "fecha": "2017-09-16 22:30:07",
+                    "archivo": "67",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "66",
+                    "descripcion": "ghg",
+                    "fecha": "2017-09-16 22:28:29",
+                    "archivo": "66",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "65",
+                    "descripcion": "assas",
+                    "fecha": "2017-09-16 22:25:45",
+                    "archivo": "65",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "64",
+                    "descripcion": "fgfgfgfgfgf",
+                    "fecha": "2017-09-16 22:23:15",
+                    "archivo": "64",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "63",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-16 16:42:53",
+                    "archivo": "63",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "62",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-16 16:42:26",
+                    "archivo": "62",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "60",
+                    "descripcion": "Archivo de prueba",
+                    "fecha": "2017-09-15 10:18:05",
+                    "archivo": "60",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "43",
+                    "descripcion": "wwww",
+                    "fecha": "2017-09-14 19:08:41",
+                    "archivo": "43",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "35",
+                    "descripcion": "6666",
+                    "fecha": "2017-09-14 16:56:24",
+                    "archivo": "35",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "36",
+                    "descripcion": "6666",
+                    "fecha": "2017-09-14 16:56:24",
+                    "archivo": "36",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "34",
+                    "descripcion": "comentario",
+                    "fecha": "2017-09-14 16:55:38",
+                    "archivo": "34",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "33",
+                    "descripcion": "comentario",
+                    "fecha": "2017-09-14 16:55:37",
+                    "archivo": "33",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "31",
+                    "descripcion": "Hola",
+                    "fecha": "2017-09-14 16:54:47",
+                    "archivo": "31",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "32",
+                    "descripcion": "Hola",
+                    "fecha": "2017-09-14 16:54:47",
+                    "archivo": "32",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "22",
+                    "descripcion": "holaaaaaaaa",
+                    "fecha": "2017-09-14 16:26:17",
+                    "archivo": "22",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "8",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:24:45",
+                    "archivo": "8",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "6",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-11 00:17:00",
+                    "archivo": "6",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "5",
+                    "descripcion": "hshshs",
+                    "fecha": "2017-09-11 00:07:25",
+                    "archivo": "5",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": 1,
+                    "lng": 1
+                },
+                {
+                    "lat": 1,
+                    "lng": 1
+                }
+            ],
+            "area": "0",
+            "Categoria": "Agricultura"
+        },
+        {
+            "idIniciativa": "17",
+            "titulo": "Prueba",
+            "descripcion": "Prueba con Manolo",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "1",
+            "Comentarios": [
+                {
+                    "idComentario": "165",
+                    "descripcion": "Prueba sin Manolo",
+                    "fecha": "2017-09-22 00:52:56",
+                    "archivo": "165",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.3689886994,
+                            "lng": -66.1380386353
+                        },
+                        {
+                            "lat": -17.3414625256,
+                            "lng": -66.1105728149
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "164",
+                    "descripcion": "hgjhgfjfh",
+                    "fecha": "2017-09-22 00:49:26",
+                    "archivo": "164",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "163",
+                    "descripcion": "ksjdasldjaslj",
+                    "fecha": "2017-09-22 00:49:02",
+                    "archivo": "163",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "162",
+                    "descripcion": "askjdaksjdlhakjs",
+                    "fecha": "2017-09-22 00:46:01",
+                    "archivo": "162",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "161",
+                    "descripcion": "dkfkl",
+                    "fecha": "2017-09-22 00:36:28",
+                    "archivo": "161",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "160",
+                    "descripcion": "adsfasdfsa",
+                    "fecha": "2017-09-22 00:28:47",
+                    "archivo": "160",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "159",
+                    "descripcion": "gfdhgdhgdh",
+                    "fecha": "2017-09-22 00:28:02",
+                    "archivo": "159",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "158",
+                    "descripcion": "jhgfjgfj",
+                    "fecha": "2017-09-22 00:25:32",
+                    "archivo": "158",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "157",
+                    "descripcion": "Prueba",
+                    "fecha": "2017-09-22 00:22:40",
+                    "archivo": "157",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "156",
+                    "descripcion": "asdmalskdalks",
+                    "fecha": "2017-09-22 00:19:34",
+                    "archivo": "156",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "155",
+                    "descripcion": "asdasdas",
+                    "fecha": "2017-09-22 00:17:59",
+                    "archivo": "155",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "154",
+                    "descripcion": "ldkasjlakjslkdjahlskj",
+                    "fecha": "2017-09-22 00:15:42",
+                    "archivo": "154",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "153",
+                    "descripcion": "sa;da;sjd;alksjd;lk",
+                    "fecha": "2017-09-22 00:14:31",
+                    "archivo": "153",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "152",
+                    "descripcion": "dlakjshldkjaslkdjal",
+                    "fecha": "2017-09-22 00:12:54",
+                    "archivo": "152",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.3696440341,
+                            "lng": -66.1600112915
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "151",
+                    "descripcion": "Prueba con mnolo",
+                    "fecha": "2017-09-22 00:11:15",
+                    "archivo": "151",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "150",
+                    "descripcion": "kfkgfhgjhg",
+                    "fecha": "2017-09-22 00:07:58",
+                    "archivo": "150",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "144",
+                    "descripcion": "Prueb",
+                    "fecha": "2017-09-21 23:43:26",
+                    "archivo": "144",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "140",
+                    "descripcion": "hola ",
+                    "fecha": "2017-09-21 22:13:13",
+                    "archivo": "140",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.387271656,
+                            "lng": -66.1782073975
+                        },
+                        {
+                            "lat": -17.3715444924,
+                            "lng": -66.1960601807
+                        },
+                        {
+                            "lat": -17.3489343203,
+                            "lng": -66.1685943604
+                        },
+                        {
+                            "lat": -17.3551605916,
+                            "lng": -66.1322021484
+                        },
+                        {
+                            "lat": -17.38202942,
+                            "lng": -66.1095428467
+                        },
+                        {
+                            "lat": -17.4102046833,
+                            "lng": -66.096496582
+                        },
+                        {
+                            "lat": -17.3790805948,
+                            "lng": -66.0542678833
+                        },
+                        {
+                            "lat": -17.334842516,
+                            "lng": -66.0583877563
+                        },
+                        {
+                            "lat": -17.4219976912,
+                            "lng": -66.0590744019
+                        },
+                        {
+                            "lat": -17.4272387861,
+                            "lng": -66.0134124756
+                        },
+                        {
+                            "lat": -17.4308419498,
+                            "lng": -66.0652542114
+                        },
+                        {
+                            "lat": -17.3623696884,
+                            "lng": -66.095123291
+                        },
+                        {
+                            "lat": -17.3535221159,
+                            "lng": -66.0412216187
+                        },
+                        {
+                            "lat": -17.4292041545,
+                            "lng": -66.1043930054
+                        },
+                        {
+                            "lat": -17.4007042067,
+                            "lng": -66.1328887939
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "137",
+                    "descripcion": "jhgjgkgkgk",
+                    "fecha": "2017-09-19 22:10:49",
+                    "archivo": "137",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "136",
+                    "descripcion": "s;adakjsdhlka",
+                    "fecha": "2017-09-19 21:25:28",
+                    "archivo": "136",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "135",
+                    "descripcion": "dfgdfgdfgfdfgdgf",
+                    "fecha": "2017-09-18 18:07:53",
+                    "archivo": "135",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.4151840477,
+                            "lng": -66.1905670166
+                        },
+                        {
+                            "lat": -17.4173133391,
+                            "lng": -66.1952018738
+                        },
+                        {
+                            "lat": -17.4194426056,
+                            "lng": -66.2000083923
+                        }
+                    ]
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": -17.4764321972,
+                    "lng": -66.3407063484
+                },
+                {
+                    "lat": -17.1526006652,
+                    "lng": -66.1841511726
+                },
+                {
+                    "lat": -17.4463019891,
+                    "lng": -65.9012532234
+                }
+            ],
+            "area": "0",
+            "Categoria": "Agricultura"
+        },
+        {
+            "idIniciativa": "13",
+            "titulo": "Programacion",
+            "descripcion": "as",
+            "imagen": "13.jpg",
+            "NroComentarios": "3",
+            "likes": "3",
+            "Comentarios": [
+                {
+                    "idComentario": "139",
+                    "descripcion": "sdsds",
+                    "fecha": "2017-09-19 23:50:33",
+                    "archivo": "139",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "138",
+                    "descripcion": "sdsdsd",
+                    "fecha": "2017-09-19 23:49:38",
+                    "archivo": "138",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "134",
+                    "descripcion": "uuuuuu",
+                    "fecha": "2017-09-18 18:02:27",
+                    "archivo": "134",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "133",
+                    "descripcion": "sdalsdasdlasdljasda",
+                    "fecha": "2017-09-17 21:53:21",
+                    "archivo": "133",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "131",
+                    "descripcion": "prubea marcadores 3",
+                    "fecha": "2017-09-17 21:49:28",
+                    "archivo": "131",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": [
+                        {
+                            "lat": -17.4082718693,
+                            "lng": -66.139755249
+                        },
+                        {
+                            "lat": -17.4035544031,
+                            "lng": -66.1540031433
+                        },
+                        {
+                            "lat": -17.4122029983,
+                            "lng": -66.1294555664
+                        }
+                    ]
+                },
+                {
+                    "idComentario": "130",
+                    "descripcion": "marcadores prueba 2",
+                    "fecha": "2017-09-17 21:47:59",
+                    "archivo": "130",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "129",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 21:43:55",
+                    "archivo": "129",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "125",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 21:35:56",
+                    "archivo": "125",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "124",
+                    "descripcion": "sdasdasdasdas",
+                    "fecha": "2017-09-17 21:33:59",
+                    "archivo": "124",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "123",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 21:33:55",
+                    "archivo": "123",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "122",
+                    "descripcion": "gfdgfdhfdh",
+                    "fecha": "2017-09-17 21:31:39",
+                    "archivo": "122",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "121",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 21:31:35",
+                    "archivo": "121",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "120",
+                    "descripcion": "Blah blah blah blah",
+                    "fecha": "2017-09-17 21:29:56",
+                    "archivo": "120",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "118",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 21:24:21",
+                    "archivo": "118",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "117",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 21:21:35",
+                    "archivo": "117",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "116",
+                    "descripcion": "Imb kgv k",
+                    "fecha": "2017-09-17 20:42:21",
+                    "archivo": "116",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "114",
+                    "descripcion": "fjgjgfjgfj",
+                    "fecha": "2017-09-17 20:18:11",
+                    "archivo": "114",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "113",
+                    "descripcion": "Isma help me",
+                    "fecha": "2017-09-17 20:06:34",
+                    "archivo": "113",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "112",
+                    "descripcion": "hlkjljhlkjllkjhlkjlkj",
+                    "fecha": "2017-09-17 20:02:10",
+                    "archivo": "112",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "111",
+                    "descripcion": "dskdjahlskjdhk",
+                    "fecha": "2017-09-17 19:55:29",
+                    "archivo": "111",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "107",
+                    "descripcion": "masdabslkdalsdlj",
+                    "fecha": "2017-09-17 19:32:28",
+                    "archivo": "107",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "106",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 19:32:22",
+                    "archivo": "106",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "105",
+                    "descripcion": "Esta es una prueba",
+                    "fecha": "2017-09-17 19:03:38",
+                    "archivo": "105",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "61",
+                    "descripcion": "Prueba",
+                    "fecha": "2017-09-15 11:58:25",
+                    "archivo": "61",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "59",
+                    "descripcion": "kgvgkvkvkgkgvkgvgvhgvhgvgviiuiu",
+                    "fecha": "2017-09-14 22:58:16",
+                    "archivo": "59",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "58",
+                    "descripcion": "aSDnasjdasdlkahsldjalsjdl",
+                    "fecha": "2017-09-14 22:40:30",
+                    "archivo": "58",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "57",
+                    "descripcion": "Holaaaaa",
+                    "fecha": "2017-09-14 22:40:10",
+                    "archivo": "57",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "49",
+                    "descripcion": "sss",
+                    "fecha": "2017-09-14 19:18:39",
+                    "archivo": "49",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "48",
+                    "descripcion": "sss",
+                    "fecha": "2017-09-14 19:18:38",
+                    "archivo": "48",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "47",
+                    "descripcion": "as",
+                    "fecha": "2017-09-14 19:12:12",
+                    "archivo": "47",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "46",
+                    "descripcion": "as",
+                    "fecha": "2017-09-14 19:12:11",
+                    "archivo": "46",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "44",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-14 19:12:04",
+                    "archivo": "44",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "45",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-14 19:12:04",
+                    "archivo": "45",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "37",
+                    "descripcion": "un pro",
+                    "fecha": "2017-09-14 18:26:01",
+                    "archivo": "37",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "38",
+                    "descripcion": "un pro",
+                    "fecha": "2017-09-14 18:26:01",
+                    "archivo": "38",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "18",
+                    "descripcion": "un saludo a todos",
+                    "fecha": "2017-09-14 12:31:42",
+                    "archivo": "18",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "17",
+                    "descripcion": "un saludo a todos",
+                    "fecha": "2017-09-14 12:31:41",
+                    "archivo": "17",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "15",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:30:40",
+                    "archivo": "15",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "16",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:30:40",
+                    "archivo": "16",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "13",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:30:04",
+                    "archivo": "13",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "14",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:30:04",
+                    "archivo": "14",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "11",
+                    "descripcion": "hola como estas",
+                    "fecha": "2017-09-14 12:28:36",
+                    "archivo": "11",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "12",
+                    "descripcion": "hola como estas",
+                    "fecha": "2017-09-14 12:28:36",
+                    "archivo": "12",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "9",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:28:07",
+                    "archivo": "9",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "10",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 12:28:07",
+                    "archivo": "10",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": -17.220823066,
+                    "lng": -66.1791086197
+                },
+                {
+                    "lat": -17.395200258,
+                    "lng": -66.2505197525
+                },
+                {
+                    "lat": -17.4109253905,
+                    "lng": -66.0156869888
+                },
+                {
+                    "lat": -17.2149201979,
+                    "lng": -66.0287332535
+                }
+            ],
+            "area": "0",
+            "Categoria": "Educaci\u00f3n"
+        },
+        {
+            "idIniciativa": "7",
+            "titulo": "Prueba Todo",
+            "descripcion": "Prueba de inserci\u00f3n total",
+            "imagen": "0.jpg",
+            "NroComentarios": "1",
+            "likes": "7",
+            "Comentarios": [
+                {
+                    "idComentario": "115",
+                    "descripcion": "fkjgkjhkhj",
+                    "fecha": "2017-09-17 20:30:27",
+                    "archivo": "115",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "110",
+                    "descripcion": "sdasdasdasda",
+                    "fecha": "2017-09-17 19:45:22",
+                    "archivo": "110",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "109",
+                    "descripcion": "Pruebabababababab",
+                    "fecha": "2017-09-17 19:44:47",
+                    "archivo": "109",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "108",
+                    "descripcion": "Prueba Total",
+                    "fecha": "2017-09-17 19:40:31",
+                    "archivo": "108",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "103",
+                    "descripcion": "undefined",
+                    "fecha": "2017-09-17 00:16:12",
+                    "archivo": "103",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "52",
+                    "descripcion": "zxx",
+                    "fecha": "2017-09-14 19:21:51",
+                    "archivo": "52",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "53",
+                    "descripcion": "zxx",
+                    "fecha": "2017-09-14 19:21:51",
+                    "archivo": "53",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "24",
+                    "descripcion": "buena idea",
+                    "fecha": "2017-09-14 16:31:49",
+                    "archivo": "24",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "23",
+                    "descripcion": "buena idea",
+                    "fecha": "2017-09-14 16:31:48",
+                    "archivo": "23",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "19",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 16:25:30",
+                    "archivo": "19",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "20",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 16:25:30",
+                    "archivo": "20",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": -17.3545707428,
+                    "lng": -66.2420654297
+                },
+                {
+                    "lat": -17.4947698823,
+                    "lng": -66.268157959
+                },
+                {
+                    "lat": -17.4043734163,
+                    "lng": -66.0800170898
+                },
+                {
+                    "lat": -17.3493275684,
+                    "lng": -66.1205291748
+                },
+                {
+                    "lat": -17.3467059249,
+                    "lng": -66.181640625
+                }
+            ],
+            "area": "1",
+            "Categoria": "Deportes"
+        },
+        {
+            "idIniciativa": "9",
+            "titulo": "Iniciativa",
+            "descripcion": "Ini",
+            "imagen": "9.png",
+            "NroComentarios": "1",
+            "likes": "2",
+            "Comentarios": [
+                {
+                    "idComentario": "51",
+                    "descripcion": "sds",
+                    "fecha": "2017-09-14 19:19:49",
+                    "archivo": "51",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "50",
+                    "descripcion": "sds",
+                    "fecha": "2017-09-14 19:19:48",
+                    "archivo": "50",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "29",
+                    "descripcion": "bueno",
+                    "fecha": "2017-09-14 16:33:07",
+                    "archivo": "29",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [],
+            "area": "1",
+            "Categoria": "Desastres Naturales"
+        },
+        {
+            "idIniciativa": "10",
+            "titulo": "Iniciativa",
+            "descripcion": "i",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "3",
+            "Comentarios": [
+                {
+                    "idComentario": "55",
+                    "descripcion": "sdd",
+                    "fecha": "2017-09-14 19:25:06",
+                    "archivo": "55",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "27",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 16:32:45",
+                    "archivo": "27",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "28",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 16:32:45",
+                    "archivo": "28",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [],
+            "area": "0",
+            "Categoria": "Agricultura"
+        },
+        {
+            "idIniciativa": "8",
+            "titulo": "Iniciativa",
+            "descripcion": "Iniciativa",
+            "imagen": "8.png",
+            "NroComentarios": "0",
+            "likes": "2",
+            "Comentarios": [
+                {
+                    "idComentario": "25",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 16:32:19",
+                    "archivo": "25",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "26",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 16:32:19",
+                    "archivo": "26",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [],
+            "area": "0",
+            "Categoria": "Espacio P\u00fablico"
+        },
+        {
+            "idIniciativa": "11",
+            "titulo": "Iniciativa Markers",
+            "descripcion": "UUU",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "1",
+            "Comentarios": [
+                {
+                    "idComentario": "56",
+                    "descripcion": "hola",
+                    "fecha": "2017-09-14 19:25:37",
+                    "archivo": "56",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [],
+            "area": "0",
+            "Categoria": "Gastronom\u00eda"
+        },
+        {
+            "idIniciativa": "15",
+            "titulo": "Prueba Area",
+            "descripcion": "Prueba Area",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "1",
+            "Comentarios": [
+                {
+                    "idComentario": "41",
+                    "descripcion": "sasas",
+                    "fecha": "2017-09-14 19:08:00",
+                    "archivo": "41",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "42",
+                    "descripcion": "sasas",
+                    "fecha": "2017-09-14 19:08:00",
+                    "archivo": "42",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": -17.344084244,
+                    "lng": -66.4826059341
+                },
+                {
+                    "lat": -17.5785757187,
+                    "lng": -66.470246315
+                },
+                {
+                    "lat": -17.5602465033,
+                    "lng": -66.0898447037
+                },
+                {
+                    "lat": -17.3283533719,
+                    "lng": -66.0829782486
+                },
+                {
+                    "lat": -17.1893389262,
+                    "lng": -66.1061096191
+                },
+                {
+                    "lat": -17.245744208,
+                    "lng": -66.3642883301
+                }
+            ],
+            "area": "0",
+            "Categoria": "Patrimonio"
+        },
+        {
+            "idIniciativa": "18",
+            "titulo": "Prueba Final",
+            "descripcion": "No molestar",
+            "imagen": "18.jpg",
+            "NroComentarios": "0",
+            "likes": "0",
+            "Comentarios": [
+                {
+                    "idComentario": "141",
+                    "descripcion": "asgsjhgksjah",
+                    "fecha": "2017-09-21 22:15:36",
+                    "archivo": "141",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [
+                {
+                    "lat": -17.4122357571,
+                    "lng": -66.3626790047
+                },
+                {
+                    "lat": -17.3296643294,
+                    "lng": -66.2335896492
+                },
+                {
+                    "lat": -17.3316307481,
+                    "lng": -66.0962605476
+                },
+                {
+                    "lat": -17.4096150145,
+                    "lng": -65.9850239754
+                },
+                {
+                    "lat": -17.4856012709,
+                    "lng": -66.1347126961
+                }
+            ],
+            "area": "1",
+            "Categoria": "Derechos Humanos"
+        },
+        {
+            "idIniciativa": "12",
+            "titulo": "uuuuuuuuu",
+            "descripcion": "8",
+            "imagen": "0.jpg",
+            "NroComentarios": "0",
+            "likes": "2",
+            "Comentarios": [
+                {
+                    "idComentario": "39",
+                    "descripcion": "scdsds",
+                    "fecha": "2017-09-14 19:06:50",
+                    "archivo": "39",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                },
+                {
+                    "idComentario": "40",
+                    "descripcion": "scdsds",
+                    "fecha": "2017-09-14 19:06:50",
+                    "archivo": "40",
+                    "area": "0",
+                    "estado": null,
+                    "Puntos": []
+                }
+            ],
+            "puntos": [],
+            "area": "0",
+            "Categoria": "Desastres Naturales"
+        }
+    ]
+}

@@ -7,15 +7,53 @@
 <ion-header>
 
   <ion-navbar color="verde">
-    <ion-title>AcercaDe</ion-title>
+    <ion-title>
+      <h2>BIGWASI - AcercaDe</h2>
+    </ion-title>
     <ion-buttons end>
         <button ion-button (click)="opcionesLogin()">
           <ion-icon name="person" class="person-icon"></ion-icon>
           <label>{{nombreUsuario}}</label>
         </button>
       </ion-buttons>
+    <ion-buttons left class="iconos">
+      <button ion-button icon-only (click)="paginaInformacion()">
+            <img src="img/logo1.png" class="imagen">
+        </button>
+    </ion-buttons>
   </ion-navbar>
-
+  <ion-toolbar color="verde">
+      <ion-buttons end>
+        <button ion-button icon-only (click)="paginaInformacion()">
+          <ion-icon name="information-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        <a ion-button icon-only href="https://www.facebook.com/Bigwasi/">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </ion-buttons>
+      <ion-buttons end>
+        <a ion-button icon-only href="https://twitter.com/Bigwasi_Bolivia">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </ion-buttons>
+      <ion-buttons end>
+        <a ion-button icon-only href="https://www.instagram.com/bigwasi/">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </ion-buttons>
+      <ion-buttons end>
+        <a ion-button icon-only href="https://www.youtube.com/channel/UC_1EzIo9YlyGI3TNy9NGEPg">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+      </ion-buttons>
+      <ion-buttons end class="iconos">
+        <a ion-button icon-only (click)="email()">
+          <ion-icon name="mail"></ion-icon>
+        </a>
+      </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 

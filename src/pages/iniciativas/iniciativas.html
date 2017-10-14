@@ -1,33 +1,58 @@
 <ion-header>
-
   <ion-navbar color="verde">
-    <ion-title>{{titulo}}</ion-title>
-    <ion-buttons end *ngIf="false">
-      <button ion-button icon-only icon-left color="dark" (click)="iniciarSesion()">
-      <ion-icon name="contact"></ion-icon>
-      Iniciar Sesion
-    </button>
-    </ion-buttons>
+    <ion-title>
+      <h2>BIGWASI - Iniciativas</h2>
+    </ion-title>
     <ion-buttons end>
-
-      <button ion-button icon-only (click)="paginaInformacion()">
-            <ion-icon name="information-circle"></ion-icon>
-        </button>
-    </ion-buttons>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="refrescarInicitavivas()">
+        <button ion-button icon-only (click)="refrescarInicitavivas()">
           <ion-icon name="refresh"></ion-icon>
-      </button>
-    </ion-buttons>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="paginaInformacion()">
+          <ion-icon name="information-circle"></ion-icon>
+        </button>
+      </ion-buttons>
     <ion-buttons end>
       <button ion-button (click)="opcionesLogin()">
         <ion-icon name="person" class="person-icon"></ion-icon>
         <label>{{nombreUsuario}}</label>
       </button>
     </ion-buttons>
+    <ion-buttons left class="iconos">
+      <button ion-button icon-only (click)="paginaInformacion()">
+        <img src="img/logo1.png" class="imagen">
+      </button>
+    </ion-buttons>
   </ion-navbar>
+  <ion-toolbar color="verde">
+    <ion-buttons end>
+      <a ion-button icon-only href="https://www.facebook.com/Bigwasi/">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-buttons end>
+      <a ion-button icon-only href="https://twitter.com/Bigwasi_Bolivia">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-buttons end>
+      <a ion-button icon-only href="https://www.instagram.com/bigwasi/">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-buttons end>
+      <a ion-button icon-only href="https://www.youtube.com/channel/UC_1EzIo9YlyGI3TNy9NGEPg">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-buttons end class="iconos">
+      <a ion-button icon-only (click)="email()">
+        <ion-icon name="mail"></ion-icon>
+      </a>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
-
 
 <ion-content class="fondo">
   <ion-row>
@@ -36,7 +61,9 @@
       </ion-searchbar>
     </ion-col>
     <ion-col col-4>
-      <ion-label class="titutloCategoria"><b>Categoria:</b></ion-label>
+      <ion-label class="titutloCategoria">
+        <b>Categoria:</b>
+      </ion-label>
       <ion-select [(ngModel)]="categoriaSelecionada" (ionChange)="onSelectChange($event)" class="seleccion">
         <ion-label>Categoria</ion-label>
         <ion-option value="Todos">Todos</ion-option>
@@ -44,11 +71,12 @@
       </ion-select>
     </ion-col>
   </ion-row>
-  <ion-label class="categoriaTitulo"><b>Categoria Seleccionada: </b>{{categoriaSelecionada}}</ion-label>
+  <ion-label class="categoriaTitulo">
+    <b>Categoria Seleccionada: </b>{{categoriaSelecionada}}</ion-label>
   <ion-row>
     <ion-col col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 *ngIf="esUsuario">
       <ion-card (click)="mostrarIniciativaUsuario()" class="card">
-        <img src="img/IniciativaPerfil.png" class="imagen">
+        <img src="img/IniciativaPerfil.png">
         <ion-card-header class="titulo" color="cafe">
           Mi Historial
         </ion-card-header>
@@ -59,33 +87,35 @@
     </ion-col>
     <ion-col col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of listaVisible">
       <ion-card (click)="mostrarIniciativa(i)" class="card">
-        <img src="http://bigwasi.org/Bigwasi/images/Iniciativas/{{i.imagen}}" class="imagen">
+        <img src="http://bigwasi.org/Bigwasi/images/Iniciativas/{{i.imagen}}">
         <ion-card-header color="cafe">
           <b text-wrap>
-          {{i.titulo}}
+            {{i.titulo}}
           </b>
         </ion-card-header>
         <ion-scroll scrollX="true" class="descripcion">
           {{i.descripcion}}
-        </ion-scroll> 
+        </ion-scroll>
         <ion-row>
           <ion-col col-6 style="padding: 5px;">
             <button ion-button icon-left clear small>
-                  <ion-icon name="thumbs-up"></ion-icon>
-                  <div>{{i.likes}}</div>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>{{i.likes}}</div>
             </button>
           </ion-col>
           <ion-col col-6 style="padding: 5px;">
             <button ion-button icon-left clear small (click)="darLike(i)">
-                  <ion-icon name="text"></ion-icon>
-                  <div>{{i.NroComentarios}}</div>
-                </button>
+              <ion-icon name="text"></ion-icon>
+              <div>{{i.NroComentarios}}</div>
+            </button>
           </ion-col>
         </ion-row>
       </ion-card>
     </ion-col>
   </ion-row>
   <ion-fab bottom right (click)="anadirIniciativa()" *ngIf="false">
-    <button ion-fab><ion-icon name="add"></ion-icon></button>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
   </ion-fab>
 </ion-content>

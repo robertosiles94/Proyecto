@@ -7,13 +7,20 @@
 <ion-header>
 
   <ion-navbar color="verde">
-    <ion-title>Mi Historial</ion-title>
-    <ion-buttons end *ngIf="esUsuario">
-      <button ion-button (click)="opcionesLogin()">
-        <ion-icon name="person" class="person-icon"></ion-icon>
-        <label>{{nombreUsuario}}</label>
-      </button>
-    </ion-buttons>
+      <ion-title>
+          <h2>BIGWASI - Mi Historial</h2>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="opcionesLogin()">
+              <ion-icon name="person" class="person-icon"></ion-icon>
+              <label>{{nombreUsuario}}</label>
+            </button>
+          </ion-buttons>
+        <ion-buttons left class="iconos">
+          <button ion-button icon-only (click)="paginaInformacion()">
+                <img src="img/logo1.png" class="imagen">
+            </button>
+        </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -36,7 +43,7 @@
   <ion-row>
     <ion-col col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 *ngFor="let i of listaVisible">
       <ion-card (click)="mostrarIniciativa(i)" class="card">
-        <img src="http://bigwasi.org/Bigwasi/images/Iniciativas/{{i.imagen}}" class="imagen">
+        <img src="http://bigwasi.org/Bigwasi/images/Iniciativas/{{i.imagen}}">
         <ion-card-header class="titulo" color="cafe">
           {{i.titulo}}
         </ion-card-header>

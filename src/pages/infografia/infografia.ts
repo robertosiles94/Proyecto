@@ -24,6 +24,10 @@ export class InfografiaPage {
    
   }
 
+  paginaInformacion() {
+    this.navCtrl.push('AcercaDePage');
+  }
+
   opcionesLogin() {
       let profileModal = this.modalCtrl.create('LoginPage');
       profileModal.present();

@@ -39,18 +39,16 @@ export class IniciativaInfoPage {
   puntos: any;
   iniciativa: any;
   esUsuario: boolean;
-  contadorMarcadores: number = 2000;
-  marcadoresLimite: number = 2000;
   marcadoresUsuario: any;
   nombreUsuario: string;
   comentarioVacio: boolean = true;
-  archivo:string = "";
+  archivo: string = "";
   correo: string;
   telefono: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
-    private services: ServicesProvider, public alertCtrl: AlertController, 
-    public toastCtrl: ToastController, private modal:ModalController) {
+    private services: ServicesProvider, public alertCtrl: AlertController,
+    public toastCtrl: ToastController, private modal: ModalController) {
     this.dispositivo = this.services.getPlataforma() == "web" ? false : true;
     var usuario = this.services.getCookie("usuario");
     if (usuario == "" || usuario == "0") {
@@ -66,13 +64,23 @@ export class IniciativaInfoPage {
 
   ionViewDidLoad() {
     this.initMap();
-    if(this.navParams.data.valor === 1) {
+    if (this.navParams.data.valor === 1) {
       this.cargarIniciativaUsuario();
     } else {
       var index = this.services.getCookie("iniciativa");
       var urlIniciativa = this.services.obtenerURLGlobal() + 'Iniciativa/GetIniciativa/' + index;
       this.getIniciativa(urlIniciativa);
     }
+  }
+
+  esImagen(archivo) {
+    if (archivo.length > 0) {
+      var arreglo = archivo.substring(archivo.length - 3);
+      if (arreglo === "jpg" || arreglo === "png" || arreglo === "svg" || arreglo === "bmp" || arreglo === "gif" || arreglo === "jpe" || arreglo === "tif") {
+        return true;
+      }
+    }
+    return false;
   }
 
   esCometarioVacio() {
@@ -137,14 +145,13 @@ export class IniciativaInfoPage {
   }
 
   clickMapa(punto) {
-    if (this.contadorMarcadores > 0 && this.esUsuario) {
+    if (this.esUsuario) {
       var marker = new google.maps.Marker({
         position: punto.latLng,
         map: this.map
       });
       this.map.panTo(punto.latLng);
       this.marcadoresUsuario.push(marker);
-      this.disminuirMarcadores();
       marker.addListener('click', () => {
         this.mensajeEliminaMarcador(marker);
       });
@@ -153,7 +160,7 @@ export class IniciativaInfoPage {
 
   addInfoWindowToMarker(object) {
     console.log(object);
-    var infoWindowContent = '<div id="content"><p><b>' + object.Comment.Usuario + '</b></p><p>'+ object.Comment.descripcion + '</p></div>';
+    var infoWindowContent = '<div id="content"><p><b>' + object.Comment.Usuario + '</b></p><p>' + object.Comment.descripcion + '</p></div>';
     var infoWindow = new google.maps.InfoWindow({
       content: infoWindowContent
     });
@@ -175,7 +182,6 @@ export class IniciativaInfoPage {
           handler: data => {
             marcador.setMap(null);
             this.removerMarcadorDeUsuario(marcador);
-            this.contadorMarcadores++;
           }
         }
       ]
@@ -188,15 +194,10 @@ export class IniciativaInfoPage {
     this.marcadoresUsuario.splice(index, 1);
   }
 
-  disminuirMarcadores() {
-    this.contadorMarcadores--;
-  }
-
   removerTodosLosMarcadores() {
     for (let i = 0; i < this.marcadoresUsuario.length; i++) {
       this.marcadoresUsuario[i].setMap(null);
     }
-    this.marcadoresLimite = 20;
   }
 
   subirComentario() {
@@ -204,8 +205,9 @@ export class IniciativaInfoPage {
       var puntos = this.concatenarMarcadores();
       this.services.subirComentario({ idIniciativa: this.idInicitiva, comentario: this.comentario, puntos: puntos });
       this.removerTodosLosMarcadores();
-      this.marcadoresUsuario = [];    
-      //this.mensajeEnviado(); 
+      this.marcadoresUsuario = [];
+      //this.mensajeEnviado();
+      this.comentarios.push({ Usuario: this.services.getCookie("nombre"), fecha: Date.now(), descripcion: this.comentario, estado: "Atencion", archivo: "" });
     }
     this.comentario = "";
   }

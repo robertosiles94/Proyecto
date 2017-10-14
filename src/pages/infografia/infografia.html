@@ -8,16 +8,21 @@
 
   <ion-navbar color="verde">
     <ion-title>
-      <h2>BIGWASI</h2>
+      <h2>BIGWASI - Pagina Principal</h2>
     </ion-title>
     <ion-buttons left class="iconos">
       <button ion-button icon-only (click)="paginaInformacion()">
-            <img src="img/logo1.png" class="imagen">
-        </button>
+        <img src="img/logo1.png" class="imagen">
+      </button>
     </ion-buttons>
   </ion-navbar>
   <ion-toolbar color="verde">
-    <ion-buttons end class="iconos"> 
+    <ion-buttons end>
+      <button ion-button icon-only (click)="paginaInformacion()">
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end class="iconos">
       <a ion-button icon-only href="https://www.facebook.com/Bigwasi/">
         <ion-icon name="logo-facebook"></ion-icon>
       </a>
@@ -28,21 +33,21 @@
       </a>
     </ion-buttons>
     <ion-buttons end>
-        <a ion-button icon-only href="https://www.instagram.com/bigwasi/">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a>
-      </ion-buttons>
-      <ion-buttons end class="iconos"> 
-          <a ion-button icon-only href="https://www.youtube.com/channel/UC_1EzIo9YlyGI3TNy9NGEPg">
-            <ion-icon name="logo-youtube"></ion-icon>
-          </a>
-        </ion-buttons>
-        <ion-buttons end class="iconos"> 
-            <a ion-button icon-only (click)="email()">
-              <ion-icon name="mail"></ion-icon>
-            </a>
-          </ion-buttons>
-      <ion-title>BigWasi es una plataforma virtual para compartir datos útiles de tu ciudad, tu barrio o comunidad.</ion-title>
+      <a ion-button icon-only href="https://www.instagram.com/bigwasi/">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-buttons end class="iconos">
+      <a ion-button icon-only href="https://www.youtube.com/channel/UC_1EzIo9YlyGI3TNy9NGEPg">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-buttons end class="iconos">
+      <a ion-button icon-only (click)="email()">
+        <ion-icon name="mail"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-title>BigWasi es una plataforma virtual para compartir datos útiles de tu ciudad, tu barrio o comunidad.</ion-title>
   </ion-toolbar>
 
 </ion-header>
@@ -53,47 +58,55 @@
     <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
       <ion-card>
         <div>
-        <ion-item>
-          <ion-icon name="contact" item-start></ion-icon>
-          <h2 text-wrap><b>Nuevo</b></h2>
-        </ion-item>
-      </div>
+          <ion-item>
+            <ion-icon name="contact" item-start></ion-icon>
+            <h2 text-wrap>
+              <b>Nuevo</b>
+            </h2>
+          </ion-item>
+        </div>
         <div class="reportar">
-        <p>Quieres reportar?</p>
-        <button ion-button (click)="registrarse()">Registrate</button>
-      </div>
+          <p>Quieres reportar?</p>
+          <button ion-button (click)="registrarse()">Registrate</button>
+        </div>
       </ion-card>
     </ion-col>
     <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
-        <ion-card>
-          <div>
+      <ion-card>
+        <div>
           <ion-item>
             <ion-icon name="contact" item-start></ion-icon>
-            <h2 text-wrap><b>Usuario Bigwasi</b></h2>
+            <h2 text-wrap>
+              <b>Usuario Bigwasi</b>
+            </h2>
           </ion-item>
         </div>
-          <div class="reportar">
+        <div class="reportar">
           <p>Ya tienes cuenta?</p>
           <button ion-button (click)="opcionesLogin()">Iniciar Sesion</button>
         </div>
-        </ion-card>
-      </ion-col>
-      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
-          <ion-card>
-            <div>
-            <ion-item>
-              <ion-icon name="contact" item-start></ion-icon>
-              <h2 text-wrap><b>Visitante</b></h2>
-            </ion-item>
-          </div>
-            <div class="reportar">
-            <p>Quieres ver las iniciativas?</p>
-            <button ion-button (click)="iniciativas()">Iniciativas</button>
-          </div>
-          </ion-card>
-        </ion-col>
+      </ion-card>
+    </ion-col>
+    <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4>
+      <ion-card>
+        <div>
+          <ion-item>
+            <ion-icon name="contact" item-start></ion-icon>
+            <h2 text-wrap>
+              <b>Visitante</b>
+            </h2>
+          </ion-item>
+        </div>
+        <div class="reportar">
+          <p>Quieres ver las iniciativas?</p>
+          <button ion-button (click)="iniciativas()">Iniciativas</button>
+        </div>
+      </ion-card>
+    </ion-col>
   </ion-row>
-  <img src="img/imagen1.png" class="imagenBigwasi">
-  <img src="img/imagen2.png" class="imagenBigwasi2">
-  <img src="img/imagen3.png" class="imagenBigwasi2">
+  <div>
+    <img src="img/imagen1.png" class="imagenBigwasi">
+    <img src="img/imagen2.png" class="imagenBigwasi2">
+    <img src="img/imagen3.png" class="imagenBigwasi2">
+  </div>
 </ion-content>
