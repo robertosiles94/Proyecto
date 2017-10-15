@@ -47,6 +47,12 @@ export class LoginPage {
     })
   }
 
+  onEnter(event: any){
+    if (event.key == 'Enter') {
+      this.login();
+    }
+  }
+
   login() {
     let headers = new Headers();
     headers.append('Content-Type', 'text/plain');

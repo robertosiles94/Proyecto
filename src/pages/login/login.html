@@ -16,7 +16,7 @@
 
       <ion-item>
         <ion-label floating>Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="contrasena" formControlName="password" id="txtPassword"></ion-input>
+        <ion-input type="password" [(ngModel)]="contrasena" formControlName="password" id="txtPassword" (keyup)="onEnter($event)"></ion-input>
       </ion-item>
 
       <div *ngIf="formLogin.get('password').errors && formLogin.get('password').dirty">
