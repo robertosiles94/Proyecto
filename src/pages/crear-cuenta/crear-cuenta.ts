@@ -24,9 +24,9 @@ export class CrearCuentaPage {
   confirmContrasena: string;
   formRegister: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
     public services: ServicesProvider, private alertCtrl: AlertController, public formBuilder: FormBuilder) {
-      this.formRegister = this.createRegisterForm();
+    this.formRegister = this.createRegisterForm();
   }
 
   dismiss() {
@@ -43,9 +43,15 @@ export class CrearCuentaPage {
   }
 
   registrar() {
-    if(this.contrasena ==  this.confirmContrasena) {
-      this.services.registrarUsuario({email: this.correo, nombreCompleto: this.nombre, telefono: this.telefono, password: this.contrasena});
+    if (this.contrasena == this.confirmContrasena) {
+      this.services.registrarUsuario({ email: this.correo, nombreCompleto: this.nombre, telefono: this.telefono, password: this.contrasena });
       this.dismiss();
+      let alert = this.alertCtrl.create({
+        title: 'Registro de usuario',
+        subTitle: 'Se registró al usuario con éxito, inicie sesión para comenzar a interactuar con el sistema.',
+        buttons: ['Aceptar']
+      });
+      alert.present()
     } else {
       let alert = this.alertCtrl.create({
         title: 'Error',
@@ -56,4 +62,9 @@ export class CrearCuentaPage {
     }
   }
 
+  onEnter(event: any) {
+    if (event.key == 'Enter') {
+      return true;
+    }
+  }
 }

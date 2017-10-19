@@ -4,7 +4,7 @@
     <ion-list class="subir-lista">
       <ion-item>
         <ion-label floating>Nombre completo: </ion-label>
-        <ion-input type="text" [(ngModel)]="nombre" required formControlName="nombre"></ion-input>
+        <ion-input type="text" [(ngModel)]="nombre" required formControlName="nombre" (keyup)="onEnter($event)"></ion-input>
       </ion-item>
 
       <div *ngIf="formRegister.get('nombre').errors && formRegister.get('nombre').dirty">
@@ -18,7 +18,7 @@
 
       <ion-item>
         <ion-label floating>Teléfono: </ion-label>
-        <ion-input type="text" [(ngModel)]="telefono" formControlName="telefono"></ion-input>
+        <ion-input type="text" [(ngModel)]="telefono" formControlName="telefono" (keyup)="onEnter($event)"></ion-input>
       </ion-item>
 
       <div *ngIf="formRegister.get('telefono').errors && formRegister.get('telefono').dirty">
@@ -29,7 +29,7 @@
 
       <ion-item>
         <ion-label floating>Correo electrónico: </ion-label>
-        <ion-input type="email" [(ngModel)]="correo" required formControlName="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="correo" required formControlName="email" (keyup)="onEnter($event)"></ion-input>
       </ion-item>
 
       <div *ngIf="formRegister.get('email').errors && formRegister.get('email').dirty">
@@ -43,7 +43,7 @@
 
       <ion-item>
         <ion-label floating>Contraseña: </ion-label>
-        <ion-input type="password" [(ngModel)]="contrasena" formControlName="contrasena" required></ion-input>
+        <ion-input type="password" [(ngModel)]="contrasena" formControlName="contrasena" required (keyup)="onEnter($event)"></ion-input>
       </ion-item>
 
       <div *ngIf="formRegister.get('contrasena').errors && formRegister.get('contrasena').dirty">
@@ -54,7 +54,7 @@
 
       <ion-item>
         <ion-label floating>Confirmar contraseña: </ion-label>
-        <ion-input type="password" [(ngModel)]="confirmContrasena" formControlName="confirmarContrasena" required></ion-input>
+        <ion-input type="password" [(ngModel)]="confirmContrasena" formControlName="confirmarContrasena" required (keyup)="onEnter($event)"></ion-input>
       </ion-item>
 
       <div *ngIf="formRegister.get('confirmarContrasena').errors && formRegister.get('confirmarContrasena').dirty">

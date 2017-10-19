@@ -26,8 +26,5 @@ export class ModalPage {
   closeModal() {
     this.navCtrl.pop();
   }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
-  }
 
 }
