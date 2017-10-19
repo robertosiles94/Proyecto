@@ -53,8 +53,12 @@
       <ion-scroll scrollY="true" class="lista">
         <ion-list>
           <ion-item *ngFor="let c of comentarios">
-            <h2>{{c.Usuario}}</h2>
+            <h2><b>Usuario:</b> {{c.Usuario}}</h2>
             <p text-wrap>Fecha publicada: {{c.fecha}} <b class="{{c.estado}}">{{c.estado}}</b></p>
+            <p text-wrap *ngIf="hayFecha(c.fechaRecivido)">Fecha recivido: {{c.fechaRecivido}}</p>
+            <p text-wrap *ngIf="hayFecha(c.fechaAtencion)">Fecha Atendido: {{c.fechaAtencion}}</p>
+            <p text-wrap *ngIf="hayFecha(c.fechaConcluido)">Fecha Concluido: {{c.fechaConcluido}}</p>
+            <h3><b>Comentario:</b></h3>
             <h4 text-wrap>{{c.descripcion}}</h4>
             <a href="{{c.archivo}}" *ngIf="c.archivo != ''">Archivo Adjunto</a>
             <img src="{{c.archivo}}" *ngIf="esImagen(c.archivo)" item-end class="imagenReporte">

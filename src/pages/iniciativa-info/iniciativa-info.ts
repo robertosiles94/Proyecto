@@ -73,6 +73,10 @@ export class IniciativaInfoPage {
     }
   }
 
+  hayFecha(fecha) {
+    return fecha != null;
+  }
+
   esImagen(archivo) {
     if (archivo.length > 0) {
       var arreglo = archivo.substring(archivo.length - 3);

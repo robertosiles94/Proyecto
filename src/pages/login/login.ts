@@ -74,6 +74,7 @@ export class LoginPage {
               document.cookie = "email" + "=" + this.profile.email;
               //window.location.reload();
               this.navCtrl.push('IniciativasPage');
+              //this.app.setRoot('IniciativasPage');
             });
           } else {
             window.location.href = "http://bigwasi.org/Bigwasi/";

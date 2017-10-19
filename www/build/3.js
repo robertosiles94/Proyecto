@@ -96,6 +96,11 @@ var LoginPage = (function () {
             password: ['', [__WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* Validators */].required]]
         });
     };
+    LoginPage.prototype.onEnter = function (event) {
+        if (event.key == 'Enter') {
+            this.login();
+        }
+    };
     LoginPage.prototype.login = function () {
         var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Headers */]();
@@ -118,6 +123,7 @@ var LoginPage = (function () {
                             document.cookie = "email" + "=" + _this.profile.email;
                             //window.location.reload();
                             _this.navCtrl.push('IniciativasPage');
+                            //this.app.setRoot('IniciativasPage');
                         });
                     }
                     else {
@@ -140,7 +146,7 @@ var LoginPage = (function () {
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"E:\Mis proyectos\MiGusto\src\pages\login\login.html"*/'<ion-content padding>\n\n  <br>\n\n  <h1 class="titulo">Iniciar Sesión</h1>\n\n  <form [formGroup]="formLogin">\n\n    <ion-list>\n\n      <ion-item>\n\n        <ion-label floating>Correo electrónico</ion-label>\n\n        <ion-input type="email" [(ngModel)]="correo" formControlName="email"></ion-input>\n\n      </ion-item>\n\n\n\n      <div *ngIf="formLogin.get(\'email\').errors && formLogin.get(\'email\').dirty">\n\n        <p color="danger" ion-text *ngIf="formLogin.get(\'email\').hasError(\'required\')">\n\n          El campo es requerido.\n\n        </p>\n\n      </div>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Contraseña</ion-label>\n\n        <ion-input type="password" [(ngModel)]="contrasena" formControlName="password" id="txtPassword"></ion-input>\n\n      </ion-item>\n\n\n\n      <div *ngIf="formLogin.get(\'password\').errors && formLogin.get(\'password\').dirty">\n\n        <p color="danger" ion-text *ngIf="formLogin.get(\'password\').hasError(\'required\')">\n\n          El campo es requerido.\n\n        </p>\n\n      </div>\n\n    </ion-list>\n\n\n\n    <br>\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col>\n\n          <button ion-button outline round class="posicionar-doble texto-normal" (click)="dismiss()">Cancelar</button>\n\n        </ion-col>\n\n        <ion-col>\n\n          <button ion-button outline round class="posicionar-doble texto-normal" type="submit" (click)="login()" block [disabled]="!formLogin.valid ">Iniciar Sesión</button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n\n\n  <p class="recorrer-derecha">¿No tienes cuenta?\n\n    <button ion-button clear class="boton-registrar texto-normal" (click)="registrarse()">Regístrate</button>\n\n  </p>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Mis proyectos\MiGusto\src\pages\login\login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"E:\Mis proyectos\MiGusto\src\pages\login\login.html"*/'<ion-content padding>\n\n  <br>\n\n  <h1 class="titulo">Iniciar Sesión</h1>\n\n  <form [formGroup]="formLogin">\n\n    <ion-list>\n\n      <ion-item>\n\n        <ion-label floating>Correo electrónico</ion-label>\n\n        <ion-input type="email" [(ngModel)]="correo" formControlName="email"></ion-input>\n\n      </ion-item>\n\n\n\n      <div *ngIf="formLogin.get(\'email\').errors && formLogin.get(\'email\').dirty">\n\n        <p color="danger" ion-text *ngIf="formLogin.get(\'email\').hasError(\'required\')">\n\n          El campo es requerido.\n\n        </p>\n\n      </div>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Contraseña</ion-label>\n\n        <ion-input type="password" [(ngModel)]="contrasena" formControlName="password" id="txtPassword" (keyup)="onEnter($event)"></ion-input>\n\n      </ion-item>\n\n\n\n      <div *ngIf="formLogin.get(\'password\').errors && formLogin.get(\'password\').dirty">\n\n        <p color="danger" ion-text *ngIf="formLogin.get(\'password\').hasError(\'required\')">\n\n          El campo es requerido.\n\n        </p>\n\n      </div>\n\n    </ion-list>\n\n\n\n    <br>\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col>\n\n          <button ion-button outline round class="posicionar-doble texto-normal" (click)="dismiss()">Cancelar</button>\n\n        </ion-col>\n\n        <ion-col>\n\n          <button ion-button outline round class="posicionar-doble texto-normal" type="submit" (click)="login()" block [disabled]="!formLogin.valid ">Iniciar Sesión</button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n\n\n  <p class="recorrer-derecha">¿No tienes cuenta?\n\n    <button ion-button clear class="boton-registrar texto-normal" (click)="registrarse()">Regístrate</button>\n\n  </p>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\Mis proyectos\MiGusto\src\pages\login\login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_services_services__["a" /* ServicesProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */],
