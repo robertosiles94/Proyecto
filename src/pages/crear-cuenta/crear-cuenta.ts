@@ -61,10 +61,4 @@ export class CrearCuentaPage {
       alert.present();
     }
   }
-
-  onEnter(event: any) {
-    if (event.key == 'Enter') {
-      return true;
-    }
-  }
 }
