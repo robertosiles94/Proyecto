@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Platform } from 'ionic-angular';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
 /*
@@ -85,14 +86,12 @@ export class ServicesProvider {
   }
 
   subirComentario(objetoComentario) {
-    console.log(objetoComentario.puntos);
     var link = this.URLGlobal + 'Comentario/Registar';
     let headers = new Headers();
     headers.append('Content-Type', 'text/plain');
     this.http.post(link + "?idIniciativa=" + objetoComentario.idIniciativa + "&idUsuario=" + this.getCookie("usuario") + "&comentario=" + objetoComentario.comentario + "&puntos=[" + objetoComentario.puntos + "]", objetoComentario, { headers: headers }).map(res => res.json())
       .subscribe(data => {
         this.valor = data.idComentario;
-        console.log(data);
       }, error => {
         console.log("error");
       });
@@ -104,7 +103,6 @@ export class ServicesProvider {
     headers.append('Content-Type', 'text/plain');
     this.http.post(this.URLGlobal + 'Iniciativa/Like' + "?idIniciativa=" + idIniciativa + "&idUsuario=" + this.getCookie("usuario"), body, { headers: headers }).map(res => res.json())
       .subscribe(data => {
-        console.log(data);
       }, error => {
         console.log("error");
       });
@@ -114,11 +112,21 @@ export class ServicesProvider {
     let headers = new Headers();
     headers.append('Content-Type', 'text/plain');
     let options = new RequestOptions({ headers: headers });
-    this.http.post(this.URLGlobal + 'Usuario/Registro?email=' + usuario.email + '&nombreCompleto=' + usuario.nombreCompleto + '&telefono='
-      + usuario.telefono + '&password=' + usuario.password, usuario, options).subscribe(data => {
-        console.log(data);
-      }, error => {
-        console.log(error);
-      });
+    return this.http.post(this.URLGlobal + 'Usuario/Registro?email=' + usuario.email + '&nombreCompleto=' + usuario.nombreCompleto + '&telefono='
+      + usuario.telefono + '&password=' + usuario.password, usuario, options);
+  }
+
+  verificarUsuario(usuario): Observable<any> {
+    let headers = new Headers();
+    headers.append('Content-Type', 'text/plain');
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get(`${this.URLGlobal}Usuario/BuscarUsuario?email=${usuario.email}&NombreCompleto=${usuario.nombreCompleto}`, options);
+  }
+
+  resetearPassword(usuario): Observable<any> {
+    let headers = new Headers();
+    headers.append('Content-Type', 'text/plain');
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(`${this.URLGlobal}Usuario/ResetPassword?idUsuario=${usuario.id}&NewPassword=${usuario.contrasena}`, usuario, options);
   }
 }

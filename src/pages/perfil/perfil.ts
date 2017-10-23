@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, AlertController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController, ModalController, LoadingController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesProvider } from '../../providers/services/services';
 import { Http, Headers, RequestOptions } from '@angular/http';
@@ -25,7 +25,7 @@ export class PerfilPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
     private alertCtrl: AlertController, public formBuilder: FormBuilder, public services: ServicesProvider,
-    public http: Http, public modalCtrl: ModalController) {
+    public http: Http, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
     this.formRegister = this.createRegisterForm();
     this.id = this.services.getCookie("usuario");
     this.nombre = this.services.getCookie("nombre");
@@ -53,42 +53,49 @@ export class PerfilPage {
     let headers = new Headers();
     headers.append('Content-Type', 'text/plain');
     let options = new RequestOptions({ headers: headers });
-    this.http.post(this.services.URLGlobal + 'Usuario/EditarDatos?idUsuario=' + usuario.id + '&nombreCompleto=' + usuario.nombreCompleto +
-      '&telefono=' + usuario.telefono, usuario, options)
-      .subscribe(data => {
-        if (data.json().succes == true) {
-          let alert = this.alertCtrl.create({
-            title: 'Datos modificados',
-            subTitle: 'Los datos se modificaron correctamente',
-            buttons: [{
-              text: 'Aceptar',
-              handler: () => {
-                this.dismiss();
-              }
-            }]
-          });
-          alert.present();
-          document.cookie = "nombre" + "=" + usuario.nombreCompleto;
-          document.cookie = "telefono" + "=" + usuario.telefono;
-          this.navCtrl.push('IniciativasPage');
-        } else {
+
+    let loader = this.loadingCtrl.create({
+      content: "Por favor espere..."
+    });
+    loader.present().then(() => {
+      this.http.post(this.services.URLGlobal + 'Usuario/EditarDatos?idUsuario=' + usuario.id + '&nombreCompleto=' + usuario.nombreCompleto +
+        '&telefono=' + usuario.telefono, usuario, options)
+        .subscribe(data => {
+          loader.dismiss();
+          if (data.json().succes == true) {
+            let alert = this.alertCtrl.create({
+              title: 'Datos modificados',
+              subTitle: 'Los datos se modificaron correctamente',
+              buttons: [{
+                text: 'Aceptar',
+                handler: () => {
+                  this.dismiss();
+                }
+              }]
+            });
+            alert.present();
+            document.cookie = "nombre" + "=" + usuario.nombreCompleto;
+            document.cookie = "telefono" + "=" + usuario.telefono;
+            this.navCtrl.push('IniciativasPage');
+          } else {
+            const alert = this.alertCtrl.create({
+              title: 'Error',
+              subTitle: 'Error al modificar los datos, verique los campos y vuelva a intentarlo.',
+              buttons: ['Aceptar']
+            });
+            alert.present();
+          }
+        }, error => {
+          console.log(error);
+          loader.dismiss();
           const alert = this.alertCtrl.create({
             title: 'Error',
-            subTitle: 'Error al modificar los datos, verique los campos y vuelva a intentarlo.',
+            subTitle: 'Error al modificar los datos, consulte con el personal de sistemas.',
             buttons: ['Aceptar']
           });
           alert.present();
-        }
-
-      }, error => {
-        console.log(error);
-        const alert = this.alertCtrl.create({
-          title: 'Error',
-          subTitle: 'Error al modificar los datos, consulte con el personal de sistemas.',
-          buttons: ['Aceptar']
         });
-        alert.present();
-      });
+    });
   }
 
   cambiarContrasena() {

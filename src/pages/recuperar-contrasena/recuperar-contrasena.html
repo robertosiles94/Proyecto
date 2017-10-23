@@ -1,0 +1,72 @@
+<ion-content padding>
+  <h1 class="titulo">Recuperar contraseña</h1>
+  <form [formGroup]="formRegister">
+    <ion-list class="subir-lista">
+
+      <ion-item>
+        <ion-label floating>Correo electrónico: </ion-label>
+        <ion-input type="email" [(ngModel)]="correo" required formControlName="email"></ion-input>
+      </ion-item>
+
+      <div *ngIf="formRegister.get('email').errors && formRegister.get('email').dirty">
+        <p color="danger" ion-text *ngIf="formRegister.get('email').hasError('required')">
+          El campo es requerido.
+        </p>
+        <p color="danger" ion-text *ngIf="formRegister.get('email').hasError('email')">
+          No es un correo válido.
+        </p>
+      </div>
+
+      <ion-item>
+        <ion-label floating>Nombre completo: </ion-label>
+        <ion-input type="text" [(ngModel)]="nombre" required formControlName="nombre"></ion-input>
+      </ion-item>
+      <div class="separacionIzq">
+        <small class="colorSmall">* El nombre tiene que ser igual al nombre que se encuentra registrado en la base de datos.</small>
+      </div>
+
+      <div *ngIf="formRegister.get('nombre').errors && formRegister.get('nombre').dirty">
+        <p color="danger" ion-text *ngIf="formRegister.get('nombre').hasError('required')">
+          El campo es requerido.
+        </p>
+        <p color="danger" ion-text *ngIf="formRegister.get('nombre').hasError('pattern')">
+          Solo se aceptan letras sin caracteres especiales.
+        </p>
+      </div>
+
+      <ion-item>
+        <ion-label floating>Contraseña nueva: </ion-label>
+        <ion-input type="password" [(ngModel)]="contrasena" formControlName="contrasena" required></ion-input>
+      </ion-item>
+
+      <div *ngIf="formRegister.get('contrasena').errors && formRegister.get('contrasena').dirty">
+        <p color="danger" ion-text *ngIf="formRegister.get('contrasena').hasError('required')">
+          El campo es requerido.
+        </p>
+      </div>
+
+      <ion-item>
+        <ion-label floating>Confirmar contraseña: </ion-label>
+        <ion-input type="password" [(ngModel)]="confirmContrasena" formControlName="confirmarContrasena" required></ion-input>
+      </ion-item>
+
+      <div *ngIf="formRegister.get('confirmarContrasena').errors && formRegister.get('confirmarContrasena').dirty">
+        <p color="danger" ion-text *ngIf="formRegister.get('confirmarContrasena').hasError('required')">
+          El campo es requerido.
+        </p>
+      </div>
+    </ion-list>
+
+    <br>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button outline round class="posicionar-doble texto-normal" (click)="dismiss()">Cancelar</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button outline round class="posicionar-doble texto-normal" (click)="recuperarContrasena()" type="submit" block [disabled]="!formRegister.valid ">Registrar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
