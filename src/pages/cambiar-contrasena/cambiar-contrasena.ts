@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ViewController, LoadingController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesProvider } from '../../providers/services/services';
 import { Http, Headers, RequestOptions } from '@angular/http';
@@ -26,7 +26,7 @@ export class CambiarContrasenaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
     public formBuilder: FormBuilder, public services: ServicesProvider, private alertCtrl: AlertController,
-    public http: Http) {
+    public http: Http, public loadingCtrl: LoadingController) {
     this.formRegister = this.createRegisterForm();
     this.id = this.services.getCookie("usuario");
   }
@@ -51,10 +51,15 @@ export class CambiarContrasenaPage {
       let headers = new Headers();
       headers.append('Content-Type', 'text/plain');
       let options = new RequestOptions({ headers: headers });
-      this.http.post(this.services.URLGlobal + 'Usuario/EditarPassword?idUsuario=' + usuario.id + '&password=' + usuario.oldPassword +
+
+      let loader = this.loadingCtrl.create({
+        content: "Por favor espere..."
+      });
+      loader.present().then(() => {
+        this.http.post(this.services.URLGlobal + 'Usuario/EditarPassword?idUsuario=' + usuario.id + '&password=' + usuario.oldPassword +
         '&NewPassword=' + usuario.newPassword, usuario, options)
         .subscribe(data => {
-          console.log(data);
+          loader.dismiss();
           if (data.json().succesPassword == true) {
             let alert = this.alertCtrl.create({
               title: 'Contraseña modificada',
@@ -76,8 +81,6 @@ export class CambiarContrasenaPage {
                 this.navCtrl.push('IniciativasPage');
               }, 3000);
             });
-            
-
           } else {
             const alert = this.alertCtrl.create({
               title: 'Error',
@@ -88,6 +91,7 @@ export class CambiarContrasenaPage {
           }
         }, error => {
           console.log(error);
+          loader.dismiss();
           const alert = this.alertCtrl.create({
             title: 'Error',
             subTitle: 'Error al modificar la contraseña, consulte con el personal de sistemas.',
@@ -95,6 +99,7 @@ export class CambiarContrasenaPage {
           });
           alert.present();
         });
+      });
     } else {
       const alert = this.alertCtrl.create({
         title: 'Error',
